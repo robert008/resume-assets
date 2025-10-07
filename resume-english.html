@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Chuang - Senior Mobile App Solution Architect</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #2c3e50;
+        }
+
+        .name {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 1.4em;
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 0.95em;
+            color: #555;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Professional Summary */
+        .summary {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+
+        .summary-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+
+        .summary-content {
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* Core Competencies */
+        .skills-section {
+            margin: 25px 0;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 12px 20px;
+            font-size: 0.95em;
+        }
+
+        .skill-category {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .skill-items {
+            color: #555;
+        }
+
+        /* Professional Experience */
+        .experience-section {
+            margin: 25px 0;
+        }
+
+        .job {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .job-header {
+            margin-bottom: 10px;
+        }
+
+        .job-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .company-info {
+            font-size: 1em;
+            color: #7f8c8d;
+            margin: 5px 0;
+        }
+
+        .job-period {
+            font-size: 0.9em;
+            color: #95a5a6;
+            font-style: italic;
+        }
+
+        .job-highlights {
+            margin-top: 12px;
+        }
+
+        .job-highlights ul {
+            margin-left: 20px;
+            font-size: 0.93em;
+            color: #444;
+        }
+
+        .job-highlights li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        .achievement-metrics {
+            background: #e8f5e8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 8px 0;
+            font-size: 0.9em;
+            border-left: 3px solid #27ae60;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            margin: 25px 0;
+            padding: 20px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .portfolio-label {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-link {
+            font-size: 0.9em;
+            color: #3498db;
+            word-break: break-all;
+            text-decoration: none;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+
+        .portfolio-link:hover {
+            text-decoration: underline;
+        }
+
+        .portfolio-note {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            margin-top: 8px;
+        }
+
+        /* Education */
+        .education-section {
+            margin: 25px 0;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .degree-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .school-info {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 3px;
+        }
+
+        /* Print optimization */
+        @media print {
+            body {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1 class="name">Robert Chuang</h1>
+        <p class="title">Senior Mobile App Solution Architect</p>
+        <div class="contact-info">
+            <span class="contact-item">📧 figo007007@gmail.com</span>
+            <span class="contact-item">📍 Taichung, Taiwan</span>
+            <span class="contact-item">🌐 Open to Remote Work</span>
+        </div>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="summary">
+        <h2 class="summary-title">Professional Summary</h2>
+        <p class="summary-content">
+            <strong>Senior Mobile Solution Architect</strong> with <strong>16 years</strong> of expertise in iOS and cross-platform development, specializing in <strong>AI integration, performance optimization, and complex system architecture design</strong>. Proven track record of migrating server-side AI recognition systems to mobile platforms using <strong>C++ FFI architecture</strong>, achieving <strong>90% performance improvement</strong> (5s → 0.5s response time). Led enterprise-grade applications serving government agencies and Fortune 500 companies. Expert in <strong>Swift, Objective-C, Flutter, C++</strong> with deep experience in <strong>large-scale modular architecture, multi-target management, and cross-platform integration</strong>. Strong advocate for <strong>AI-powered development workflows</strong> and rapid technology adoption.
+        </p>
+    </div>
+
+    <!-- Core Competencies -->
+    <div class="skills-section">
+        <h2 class="section-title">Core Competencies & Technologies</h2>
+        <div class="skills-grid">
+            <div class="skill-category">Mobile Platforms</div>
+            <div class="skill-items"><strong>iOS (Swift, Objective-C), Flutter (Dart), Android (Java)</strong></div>
+
+            <div class="skill-category">AI & Performance</div>
+            <div class="skill-items"><strong>On-device AI, C++ FFI, ONNX Runtime, OpenCV, Face Recognition, Performance Optimization</strong></div>
+
+            <div class="skill-category">Architecture & Design</div>
+            <div class="skill-items"><strong>MVVM, BLoC, Clean Architecture, Modular Design, Cross-platform Integration</strong></div>
+
+            <div class="skill-category">Backend Integration</div>
+            <div class="skill-items"><strong>PHP Laravel, RESTful API, Firebase (FCM, Auth), WebSocket, Push Notifications (APNs, FCM)</strong></div>
+
+            <div class="skill-category">State Management</div>
+            <div class="skill-items"><strong>Provider, BLoC, Riverpod, Offline-first Architecture, Hive Local Storage</strong></div>
+
+            <div class="skill-category">DevOps & Tools</div>
+            <div class="skill-items"><strong>Git, CocoaPods, CI/CD, Multi-target Management, Static/Dynamic Library Integration</strong></div>
+
+            <div class="skill-category">Specialized Features</div>
+            <div class="skill-items"><strong>Beacon Indoor Positioning, i18n/Localization, QR Code Integration, Offline Data Sync</strong></div>
+
+            <div class="skill-category">AI-Powered Development</div>
+            <div class="skill-items"><strong>AI Coding Assistants, Rapid Prototyping, Legacy Code Analysis, Cross-domain Learning</strong></div>
+        </div>
+    </div>
+
+    <!-- Professional Experience -->
+    <div class="experience-section">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <!-- Current Role -->
+        <div class="job">
+            <div class="job-header">
+                <h3 class="job-title">Senior iOS/Flutter Engineer & AI Integration Lead</h3>
+                <p class="company-info">EZPlus Technology Co., Ltd. | Application Software Development</p>
+                <p class="job-period">November 2024 ~ Present</p>
+            </div>
+            <div class="job-highlights">
+                <ul>
+                    <li><strong>AI System Migration Leadership:</strong> Spearheaded migration of server-side facial recognition system to mobile platform using <strong>Flutter FFI + C++ architecture</strong>, achieving <strong>90% performance improvement</strong> from 5 seconds to 500ms response time</li>
+                    <div class="achievement-metrics">
+                        <strong>Impact:</strong> 90% performance boost • Apple Store compliance • Reusable Flutter Plugin SDK • Zero-network AI capability
+                    </div>
+                    
+                    <li><strong>Enterprise App Development:</strong> Independently developed employee attendance management system with <strong>face recognition, Beacon indoor positioning, offline-first architecture</strong>, and anti-fraud mechanisms including time tampering detection</li>
+                    
+                    <li><strong>Large-scale Architecture:</strong> Collaborated on enterprise facility management platform with <strong>120K lines of code, 531 files</strong>, implementing <strong>BLoC + Riverpod hybrid architecture</strong> with multi-language support (Traditional Chinese, Simplified Chinese, English)</li>
+                    
+                    <li><strong>Cross-domain Technical Rescue:</strong> Rapidly learned <strong>PHP Laravel</strong> from zero to production-ready in crisis situation, successfully restored enterprise push notification system for multiple apps while maintaining original app development timeline</li>
+                    
+                    <li><strong>Technology Stack:</strong> Flutter, iOS (Swift/Objective-C), C++, PHP Laravel, Firebase, RESTful API, Performance Engineering, System Architecture Design</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FUHOM Technology -->
+        <div class="job">
+            <div class="job-header">
+                <h3 class="job-title">Senior Flutter Engineer & Team Lead</h3>
+                <p class="company-info">FUHOM Technology Co., Ltd. | Communication Equipment Industry | Team Size: 5-8 Engineers</p>
+                <p class="job-period">October 2023 ~ August 2024 (11 months)</p>
+            </div>
+            <div class="job-highlights">
+                <ul>
+                    <li><strong>Internal Flutter App Development:</strong> Led development of company's internal Flutter applications integrating with hardware devices (DVR, IP cameras) through custom API interfaces</li>
+                    <li><strong>Native-Flutter Bridge:</strong> Architected bidirectional communication between native iOS/Android modules and Flutter components for seamless integration</li>
+                    <li><strong>Team Leadership:</strong> Managed 5-8 engineer team, responsible for technical decision-making, task allocation, and delivery timeline management</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SkyEye Satellite -->
+        <div class="job">
+            <div class="job-header">
+                <h3 class="job-title">Senior iOS Engineer & iOS Platform Lead</h3>
+                <p class="company-info">SkyEye Satellite Technology Co., Ltd. | Software & Internet Services</p>
+                <p class="job-period">October 2015 ~ July 2023 (7 years 10 months)</p>
+            </div>
+            <div class="job-highlights">
+                <ul>
+                    <li><strong>Cross-functional Team Leadership:</strong> Led App team coordination with PM, Backend, UI, and Android teams to ensure on-time project delivery and quality standards</li>
+                    
+                    <li><strong>iOS Platform Ownership:</strong> Served as primary iOS platform owner, responsible for all core module development, architecture design, and maintenance strategies</li>
+                    
+                    <li><strong>Engineering Excellence & Mentorship:</strong> Trained and mentored junior engineers, established coding standards and development workflows, elevated overall team technical capabilities</li>
+                    
+                    <li><strong>API Architecture Modernization:</strong> Led migration from SOAP (.asmx) to RESTful API architecture, implemented platform unification and multi-tenant support</li>
+                    
+                    <li><strong>Complex Multi-target Management:</strong> Designed and maintained 10+ customized brand versions with multi-target architecture, ensuring stability and scalability</li>
+                    
+                    <li><strong>Key Project Deliveries:</strong></li>
+                    <ul style="margin-top: 8px; margin-left: 15px;">
+                        <li><strong>Government Contracts:</strong> Waste management service apps for Taichung, Chiayi, Yunlin, and Kaohsiung cities</li>
+                        <li><strong>Enterprise Projects:</strong> Apps for Yamato Transport (Black Cat), Chi Mei Corporation, Global Express</li>
+                        <li><strong>Large-scale Events:</strong> Dajia Mazu Pilgrimage app supporting tens of thousands of concurrent users</li>
+                        <li><strong>National Park Series:</strong> Shei-Pa National Park iOS app, unified platform supporting Shei-Pa, Taroko, and Yushan National Parks</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Projects & Technical Achievements -->
+    <div class="experience-section">
+        <h2 class="section-title">Key Projects & Technical Achievements</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <h3 class="job-title">🚀 Server-to-Mobile AI Migration Project</h3>
+                <p class="company-info">Leading Technical Innovation | Difficulty: ★★★</p>
+            </div>
+            <div class="job-highlights">
+                <ul>
+                    <li><strong>Challenge:</strong> Migrate Python-based server AI recognition system to Flutter mobile platform with zero-network capability</li>
+                    <li><strong>Solution:</strong> Designed three-tier architecture: C++ ONNX Runtime → Flutter Plugin → Mobile App</li>
+                    <li><strong>Technical Breakthrough:</strong> Overcame Apple's Nested Dynamic Frameworks limitation by converting to static library compilation</li>
+                    <div class="achievement-metrics">
+                        <strong>Results:</strong> 90% performance improvement (5s → 500ms) • Apple Store compliance • SDK reusability • Production deployment across 3 product lines
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <h3 class="job-title">🏢 Enterprise Attendance Management System</h3>
+                <p class="company-info">Full-stack Mobile Development | Difficulty: ★★</p>
+            </div>
+            <div class="job-highlights">
+                <ul>
+                    <li><strong>Offline-first Architecture:</strong> Implemented network-aware attendance system with intelligent mode switching, ensuring functionality under any network condition</li>
+                    <li><strong>Anti-fraud Technology:</strong> Developed multi-layer security including time tampering detection, offline data integrity verification, and face recognition integration</li>
+                    <li><strong>Cross-platform Push Integration:</strong> Designed Method Channel communication to bridge existing APNS infrastructure with Firebase FCM</li>
+                    <div class="achievement-metrics">
+                        <strong>Technology Stack:</strong> Flutter • MVVM • Provider • Hive • Beacon • FFI Integration
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <h3 class="job-title">🏗️ Enterprise Facility Management Platform</h3>
+                <p class="company-info">Large-scale Collaborative Development | Difficulty: ★</p>
+            </div>
+            <div class="job-highlights">
+                <ul>
+                    <li><strong>Large-scale Architecture Management:</strong> Collaborated on complex project with <strong>120K lines of code, 531 files</strong>, implementing BLoC + Riverpod hybrid state management</li>
+                    <li><strong>Internationalization Excellence:</strong> Implemented comprehensive multi-language architecture supporting English, Traditional Chinese, Simplified Chinese with dynamic language switching</li>
+                    <li><strong>Enterprise-grade Integration:</strong> Developed modular system covering meeting rooms, equipment maintenance, laboratory, catering, and package management</li>
+                    <div class="achievement-metrics">
+                        <strong>Scale:</strong> 7-8 engineer team • Multi-factory support • Complex permission management • Real-time notifications
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio -->
+    <div class="portfolio-section">
+        <p class="portfolio-label">🎯 Comprehensive Technical Portfolio</p>
+        <a href="https://pub-7ffd7755217c4c84be4b81e3cddd2ad0.r2.dev/index.html" class="portfolio-link" target="_blank">
+            https://pub-7ffd7755217c4c84be4b81e3cddd2ad0.r2.dev/index.html
+        </a>
+        <p class="portfolio-note">Interactive showcase featuring 9 technical projects with video demonstrations, architecture diagrams, and detailed technical challenge explanations</p>
+    </div>
+
+    <!-- Education -->
+    <div class="education-section">
+        <h2 class="section-title">Education</h2>
+        
+        <div class="education-item">
+            <h3 class="degree-title">Master's Degree in Construction & Project Management</h3>
+            <p class="school-info">Feng Chia University, Taiwan | 2019 - 2021</p>
+        </div>
+
+        <div class="education-item">
+            <h3 class="degree-title">Bachelor's Degree in Computer Science</h3>
+            <p class="school-info">I-Shou University, Taiwan | 2003 - 2008</p>
+        </div>
+    </div>
+
+    <!-- Additional Qualifications -->
+    <div class="experience-section">
+        <h2 class="section-title">Additional Qualifications</h2>
+        
+        <div class="job" style="border: none;">
+            <div class="job-highlights">
+                <ul>
+                    <li><strong>AI-Powered Development:</strong> Extensive experience with AI coding assistants and automated development workflows</li>
+                    <li><strong>Crisis Management:</strong> Proven ability to rapidly acquire new technologies (PHP Laravel) under emergency conditions</li>
+                    <li><strong>Multi-target iOS Architecture:</strong> Expert in managing 10+ customized brand versions with complex dependency management</li>
+                    <li><strong>Government & Enterprise Projects:</strong> Successfully delivered apps for national parks, municipal services, and Fortune 500 companies</li>
+                    <li><strong>Performance Engineering:</strong> Deep expertise in memory optimization, startup time reduction, and cross-platform performance tuning</li>
+                    <li><strong>Language Skills:</strong> Native Chinese, Professional English, Open to international collaboration</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
