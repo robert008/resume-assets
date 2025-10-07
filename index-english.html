@@ -25,7 +25,7 @@
             width: 100%;
         }
 
-        /* 左側欄 30% - 全視窗高度固定 */
+        /* Left sidebar 30% - Full viewport height fixed */
         .left-sidebar {
             width: 30%;
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
@@ -38,17 +38,17 @@
             box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* 右側內容區 70% */
+        /* Right content area 70% */
         .right-content {
             width: 70%;
-            margin-left: 30%; /* 因為左側是fixed，所以需要margin */
+            margin-left: 30%; /* Margin needed because left sidebar is fixed */
             padding: 40px;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             min-height: 100vh;
         }
 
-        /* Header在左側 */
+        /* Header in left sidebar */
         .header {
             margin-bottom: 40px;
             text-align: center;
@@ -165,26 +165,26 @@
             }
         }
 
-        /* 成果展示區塊樣式 */
+        /* Achievement showcase block styles */
         .showcase-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             margin-top: 20px;
-            justify-items: start; /* 整體置左 */
+            justify-items: start; /* Overall left alignment */
         }
 
-        /* 當只有1個或2個項目時，從左開始排列 */
+        /* When there are only 1 or 2 items, arrange from left */
         .showcase-grid .showcase-item:only-child {
-            grid-column: 1; /* 單個項目置左 */
+            grid-column: 1; /* Single item left aligned */
         }
 
         .showcase-grid .showcase-item:first-child:nth-last-child(2) {
-            grid-column: 1; /* 兩個項目時，第一個在第1列 */
+            grid-column: 1; /* With two items, first in column 1 */
         }
 
         .showcase-grid .showcase-item:last-child:nth-child(2) {
-            grid-column: 2; /* 兩個項目時，第二個在第2列 */
+            grid-column: 2; /* With two items, second in column 2 */
         }
 
         .showcase-item {
@@ -226,7 +226,7 @@
             position: relative;
         }
 
-        /* 影片樣式 */
+        /* Video styles */
         .showcase-video {
             width: 100%;
             height: auto;
@@ -242,7 +242,7 @@
             transition: transform 0.3s ease;
         }
 
-        /* 圖片容器樣式 */
+        /* Image container styles */
         .showcase-image-container {
             position: relative;
             overflow: hidden;
@@ -287,7 +287,7 @@
             text-align: center;
         }
 
-        /* App Store 樣式 */
+        /* App Store styles */
         .showcase-appstore {
             position: relative;
             border-radius: 10px;
@@ -328,7 +328,7 @@
             font-weight: 700;
         }
 
-        /* TestFlight 專用樣式 */
+        /* TestFlight specific styles */
         .testflight-badge {
             position: absolute;
             top: 10px;
@@ -357,7 +357,7 @@
             font-weight: 700;
         }
 
-        /* ABM 企業部署專用樣式 */
+        /* ABM enterprise deployment specific styles */
         .enterprise-badge {
             position: absolute;
             top: 10px;
@@ -386,7 +386,7 @@
             font-weight: 700;
         }
 
-        /* 成果總結樣式 */
+        /* Achievement summary styles */
         .achievement-summary {
             display: flex;
             justify-content: space-around;
@@ -429,7 +429,7 @@
             }
         }
 
-        /* 響應式設計 */
+        /* Responsive design */
         @media (max-width: 768px) {
             .showcase-grid {
                 grid-template-columns: 1fr !important;
@@ -449,7 +449,7 @@
             }
         }
 
-        /* 左側專案列表 */
+        /* Left side project list */
         .projects-nav {
             margin-top: 30px;
         }
@@ -535,7 +535,7 @@
             font-weight: 500;
         }
 
-        /* 右側內容顯示區 */
+        /* Right side content display area */
         .content-display {
             width: 100%;
         }
@@ -858,7 +858,7 @@
 </head>
 <body>
     <div class="main-layout">
-        <!-- 左側欄 30% -->
+        <!-- Left Sidebar 30% -->
         <div class="left-sidebar">
             <header class="header">
                 <div class="profile-section">
@@ -875,7 +875,7 @@
 
             <nav class="projects-nav">
 
-                <!-- 旗艦級專案 -->
+                <!-- Flagship Project -->
                 <div class="project-nav-item flagship" onclick="showProject('flagship')">
                     <span class="nav-project-level">★★★</span>
                     <h3 class="nav-project-title">Server-grade AI Migration | Flutter SDK Integration</h3>
@@ -889,7 +889,7 @@
                     </div>
                 </div>
 
-                <!-- 企業級員工考勤管理系統 -->
+                <!-- Enterprise Employee Attendance System -->
                 <div class="project-nav-item flagship" onclick="showProject('attendance')">
                     <span class="nav-project-level">★★</span>
                     <h3 class="nav-project-title">Enterprise Employee Attendance App</h3>
@@ -902,7 +902,7 @@
                     </div>
                 </div>
 
-                <!-- 企業級設施管理平台 -->
+                <!-- Enterprise Facility Management Platform -->
                 <div class="project-nav-item flagship" onclick="showProject('facility')">
                     <span class="nav-project-level">★</span>
                     <h3 class="nav-project-title">Enterprise Facility Management App</h3>
@@ -915,7 +915,7 @@
                     </div>
                 </div>
 
-                <!-- 企業級實驗室管理系統 -->
+                <!-- Enterprise Laboratory Management System -->
                 <div class="project-nav-item flagship" onclick="showProject('lab')">
                     <span class="nav-project-level">★</span>
                     <h3 class="nav-project-title">Enterprise Laboratory Management App</h3>
@@ -928,7 +928,7 @@
                     </div>
                 </div>
 
-                <!-- 物業管理用戶端iOS版 -->
+                <!-- Property Management iOS App -->
                 <div class="project-nav-item flagship" onclick="showProject('ios')">
                     <span class="nav-project-level">★★</span>
                     <h3 class="nav-project-title">Property Management iOS App</h3>
@@ -939,7 +939,7 @@
                     </div>
                 </div>
 
-                <!-- 雪霸國家公園 iOS App -->
+                <!-- Shei-Pa National Park iOS App -->
                 <div class="project-nav-item flagship" onclick="showProject('sheipa-ios')">
                     <span class="nav-project-level">★</span>
                     <h3 class="nav-project-title">Shei-Pa National Park iOS App</h3>
@@ -951,7 +951,7 @@
                     </div>
                 </div>
 
-                <!-- 國家公園 iOS App -->
+                <!-- National Parks iOS App -->
                 <div class="project-nav-item flagship" onclick="showProject('national-park-ios')">
                     <span class="nav-project-level">★</span>
                     <h3 class="nav-project-title">National Parks Platform iOS App</h3>
@@ -963,7 +963,7 @@
                     </div>
                 </div>
 
-                <!-- 跨域緊急救援推播系統 -->
+                <!-- Emergency Rescue Push System -->
                 <div class="project-nav-item flagship" onclick="showProject('emergency-push')">
                     <span class="nav-project-level">★★</span>
                     <h3 class="nav-project-title">Emergency Rescue - PHP Push System</h3>
@@ -975,7 +975,7 @@
                     </div>
                 </div>
 
-                <!-- AI智能保全 App -->
+                <!-- AI Smart Security App -->
                 <div class="project-nav-item flagship" onclick="showProject('ai-security')">
                     <span class="nav-project-level">★</span>
                     <h3 class="nav-project-title">AI Smart Security App</h3>
@@ -991,10 +991,10 @@
             </nav>
         </div>
 
-        <!-- 右側內容區 70% -->
+        <!-- Right Content Area 70% -->
         <div class="right-content">
             <div class="content-display">
-                <!-- 預設歡迎訊息 -->
+                <!-- Welcome Message -->
                 <div id="welcome" class="welcome-message">
                     <div class="welcome-container">
                         <div class="welcome-header">
@@ -1037,53 +1037,53 @@
                     </div>
                 </div>
 
-                <!-- 旗艦級專案內容 -->
+                <!-- Flagship Project Content -->
                 <div id="flagship-content" class="content-details">
                     <div class="content-header">
-                        <h1 class="content-title">Server級 AI 移植專案｜Flutter SDK化</h1>
-                        <p class="content-subtitle">On-device AI、Flutter Plugin 化、iOS/Android 跨平台（C++/FFI）</p>
+                        <h1 class="content-title">Server-grade AI Migration | Flutter SDK Integration</h1>
+                        <p class="content-subtitle">On-device AI, Flutter Plugin Development, iOS/Android Cross-platform (C++/FFI)</p>
                         <div class="content-description">
-                            將原本在 Server AI辨識模組移植至flutter行動端，單張人臉運算約500毫秒體驗即時、不卡頓，並且封裝成 SDK，方便套用到任意fluter專案且無網也能辨識。
+                            Migrated server-side AI recognition modules to Flutter mobile platform, achieving ~500ms per face recognition with real-time, smooth experience. Packaged as SDK for easy integration into any Flutter project with zero-network AI capability.
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">背景與目標</h4>
+                        <h4 class="detail-title">Background & Objectives</h4>
                         <div class="detail-content">
                             <ul>
-                                <li>主管希望能在無網的環境下也能使用臉部辨識功能，於是才有了這個將Server辨識AI移植到行動裝置的專案</li>
-                                <li>接手的時候原本的flutter工程師已經離職，從他的專案可以看到他試圖在flutter層引用 opencv 以及 onnxruntime框架想要直接在 flutter 層直接運算AI辨識</li>
-                                <li>在 flutter 層直接運算AI辨識運算的結果相當糟糕，且在無法使用 flutter 異步多工的狀況下，執行結果就是UI直接鎖死3~5秒鐘</li>
+                                <li>Management requested offline facial recognition capability, leading to this project to migrate server-side AI recognition to mobile devices</li>
+                                <li>Inherited project from departed Flutter engineer who attempted direct OpenCV and ONNX Runtime integration at Flutter layer for AI recognition</li>
+                                <li>Flutter-layer AI computation showed poor performance with UI freezing for 3-5 seconds due to inability to utilize Flutter's asynchronous multitasking</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">我的角色</h4>
+                        <h4 class="detail-title">My Role & Leadership</h4>
                         <div class="detail-content">
                             <ul>
-                                <li>團隊角色：影像辨識團隊由我與另一位Server(python)工程師共同負責</li>
-                                <li>由我主導：透過 AI 多次的資料搜查與確認，且與同事討論之後確定要使用 FFI 架構，由我同事完成 python 轉 C++的部分，剩下部分由我完成後續C++與flutter的介接</li>
+                                <li>Team Role: Co-led the image recognition team with a Server (Python) engineer</li>
+                                <li>Technical Leadership: Led multiple AI-assisted research sessions and team discussions to determine FFI architecture approach. Colleague handled Python-to-C++ conversion while I completed C++ to Flutter integration</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">關鍵挑戰</h4>
+                        <h4 class="detail-title">Key Technical Challenges</h4>
                         <div class="detail-content">
                             <ul>
-                                <li><strong>第一階段</strong>：成功使用FFI介面呼叫了C++程式</li>
-                                <li><strong>第二階段</strong>：重新將專案建構成 flutter plugin 架構，且為了能讓外部可使用將C++程式碼封裝成動態庫</li>
-                                <li><strong>第三階段</strong>：app應用端引用了 plugin 架構後遇到apple的巢狀式動態庫(Nested Dynamic Frameworks)問題，只好再將C++編譯成靜態庫，才能通過apple的程式碼檢驗</li>
-                                <li>坦白說，C++ 不是我的專長，尤其<strong>靜態庫的編譯/鏈結</strong>難度更是超出我的想像；很慶幸最終<strong>通過這個挑戰</strong></li>
+                                <li><strong>Phase 1</strong>: Successfully implemented FFI interface for C++ program invocation</li>
+                                <li><strong>Phase 2</strong>: Refactored project into Flutter plugin architecture, packaging C++ code as dynamic library for external use</li>
+                                <li><strong>Phase 3</strong>: Encountered Apple's Nested Dynamic Frameworks issue when app referenced plugin architecture, required converting C++ to static library for App Store compliance</li>
+                                <li>Honestly, C++ was not my expertise, especially <strong>static library compilation/linking</strong> complexity exceeded expectations; fortunately <strong>overcame this challenge</strong> successfully</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">技術架構</h4>
+                        <h4 class="detail-title">Technical Architecture</h4>
                         <div class="detail-content">
-                            <p>以下是完整的 Flutter FFI Plugin 三層架構設計，展示從 C++ 原始碼到 Flutter App 的整合流程：</p>
+                            <p>The following is a complete Flutter FFI Plugin three-tier architecture design, demonstrating the integration process from C++ source code to Flutter App:</p>
                             <div class="architecture-diagram">
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB2kAAAT6CAYAAAB/BFhHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQ
                                 U1BAACxjwv8YQUAAZnMSURBVHgB7N0NtFx1fS/8P1RbJRjvug1JWjGRkLtMIiBC5QkQ1rVVgw+6xHDRIm91pQ23aFujjV3FS5
@@ -2528,48 +2528,48 @@
                                 SJd9+qoEI02kBQAAAAAAoKcdNnFiOnvueWnDumfT2HHjs9tpZ743TWtEWtgbRj239eVXEwAAAAAAAAC1GJ0AAAAAAAAAqI1IC
                                 wAAAAAAAFAjkRYAAAAAAACgRiItAAAAAAAAQI1EWgAAAAAAAIAaibQAAAAAAAAANRJpAQAAAAAAAGok0gIAAAAAAADUSKQFAA
                                 AAAAAAqJFICwAAAAAAAFAjkRYAAAAAAACgRiItAAAAAAAAQI1EWgAAAAAAAIAaibQAAAAAAAAANRJpAQAAAAAAAGok0gIAAAA
-                                AAADUSKQFAAAAAAAAqNG/ATPb4s+ExN3wAAAAAElFTkSuQmCC" alt="Flutter FFI Plugin 架構圖" />
-                                <div class="diagram-caption">Flutter FFI Plugin 三層架構：C++ → Flutter Plugin → Flutter App</div>
+                                AAADUSKQFAAAAAAAAqNG/ATPb4s+ExN3wAAAAAElFTkSuQmCC" alt="Flutter FFI Plugin Architecture Diagram" />
+                                <div class="diagram-caption">Flutter FFI Plugin Three-tier Architecture: C++ → Flutter Plugin → Flutter App</div>
                             </div>
                             <ul>
-                                <li><strong>C++ 層</strong>：ONNX Runtime + OpenCV 處理 AI 辨識邏輯</li>
-                                <li><strong>Plugin 層</strong>：FFI 介面橋接，提供統一的 Dart API</li>
-                                <li><strong>App 層</strong>：多個 Flutter App 可重複使用同一套 SDK</li>
-                                <li><strong>靜態庫封裝</strong>：解決 Apple 巢狀動態庫限制，確保程式碼安全</li>
+                                <li><strong>C++ Layer</strong>: ONNX Runtime + OpenCV handling AI recognition logic</li>
+                                <li><strong>Plugin Layer</strong>: FFI interface bridge, providing unified Dart API</li>
+                                <li><strong>App Layer</strong>: Multiple Flutter Apps can reuse the same SDK</li>
+                                <li><strong>Static Library Packaging</strong>: Solved Apple nested dynamic library limitations, ensuring code security</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">效能與成果</h4>
+                        <h4 class="detail-title">Performance Results & Impact</h4>
                         <div class="detail-content">
                             <div class="performance-metrics">
-                                <p style="margin-bottom: 15px; font-weight: 600; text-align: center; font-size: 1.1em;">性能提升指標</p>
+                                <p style="margin-bottom: 15px; font-weight: 600; text-align: center; font-size: 1.1em;">Performance Improvement Metrics</p>
                                 <div class="metrics-grid">
                                     <div class="metric-item">
                                         <div class="metric-value">95%</div>
-                                        <div class="metric-label">響應時間提升<br>(5秒 → 500ms)</div>
+                                        <div class="metric-label">Response Time Boost<br>(5s → 500ms)</div>
                                     </div>
                                     <div class="metric-item">
                                         <div class="metric-value">✓</div>
-                                        <div class="metric-label">解決UI凍結問題</div>
+                                        <div class="metric-label">Solved UI Freezing</div>
                                     </div>
                                     <div class="metric-item">
                                         <div class="metric-value">SDK</div>
-                                        <div class="metric-label">Flutter Plugin架構</div>
+                                        <div class="metric-label">Flutter Plugin SDK</div>
                                     </div>
                                     <div class="metric-item">
                                         <div class="metric-value">🔒</div>
-                                        <div class="metric-label">靜態庫封裝<br>程式碼保護</div>
+                                        <div class="metric-label">Static Library<br>Code Protection</div>
                                     </div>
                                 </div>
                             </div>
                             <ul style="margin-top: 20px;">
-                                <li>直接透過FFI介面在C++運算回來的結果從5秒 > 約500毫秒</li>
-                                <li>解決flutter層級無法使用多工造成的畫面凍結的問題</li>
-                                <li>最終完成了 flutter plugin 架構，任意專案都可以方便引用，重複利用性高</li>
-                                <li>C++ 封裝成靜態庫，提供公司外部使用也不擔心C++程式內容被看到</li>
-                                <li>On-device AI 趨勢：無網路也能運算，且減少雲端運算 loading，歐美對於AI的法律規範已逐步成型</li>
+                                <li>Direct FFI interface to C++ computation reduced response time from 5 seconds to ~500ms</li>
+                                <li>Solved Flutter layer's inability to use multitasking that caused UI freezing issues</li>
+                                <li>Successfully completed Flutter plugin architecture with high reusability for any project integration</li>
+                                <li>C++ packaged as static library enables external company usage without exposing source code</li>
+                                <li>On-device AI trend: Zero-network computation reduces cloud loading; EU/US AI regulations are taking shape</li>
                             </ul>
                         </div>
                     </div>
@@ -2578,40 +2578,40 @@
                 <!-- 企業級員工考勤管理系統內容 -->
                 <div id="attendance-content" class="content-details">
                     <div class="content-header">
-                        <h1 class="content-title">企業級員工考勤管理App</h1>
-                        <p class="content-subtitle">MVVM 架構實踐、離線資料同步、人臉識別整合、Beacon 室內定位</p>
+                        <h1 class="content-title">Enterprise Employee Attendance App</h1>
+                        <p class="content-subtitle">MVVM Architecture Implementation, Offline Data Sync, Face Recognition Integration, Beacon Indoor Positioning</p>
                         <div class="content-description">
-                            開發一套完整的員工考勤管理系統，實現離線優先架構，確保無網路環境下仍可正常打卡並自動同步。整合人臉識別與 Beacon 技術達成精準考勤，採用MVVM 架構確保程式碼可維護性，並實現 401 錯誤自動處理與 Token 刷新機制。
+                            Developed comprehensive employee attendance management system with offline-first architecture, ensuring normal check-in functionality and automatic synchronization even without network connectivity. Integrated face recognition and Beacon technology for precise attendance tracking, adopted MVVM architecture for code maintainability, and implemented automatic 401 error handling with Token refresh mechanism.
                         </div>
                     </div>
                     
                     <div class="detail-section">
-                        <h4 class="detail-title">背景與角色</h4>
+                        <h4 class="detail-title">Background & Role</h4>
                         <div class="detail-content">
-                            <p>擔任企業人臉辨識考勤系統 Flutter App 獨立開發者，負責整合考勤與人臉辨識雙後端架構。開發核心功能包含：ONNX 模型人臉辨識、Beacon 室內定位打卡、離線優先作業機制，以及時間竄改檢測、離線數據完整性驗證等多層防偽技術。</p>
+                            <p>Served as independent Flutter app developer for enterprise face recognition attendance system, responsible for integrating dual backend architecture for attendance and face recognition. Developed core functionalities including: ONNX model face recognition, Beacon indoor positioning check-in, offline-first operation mechanism, and multi-layer anti-fraud technologies such as time tampering detection and offline data integrity verification.</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">關鍵挑戰</h4>
+                        <h4 class="detail-title">Key Challenges</h4>
                         <div class="detail-content">
-                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">離線獨立作業</h4>
-                            <p>設計了網路感知式離線打卡系統，實現基於 Connectivity 監聽的智能模式切換機制，當檢測到離線狀態時自動啟動獨立的本地打卡流程，搭配離線數據持久化與增量同步策略，建立離線優先架構確保核心打卡功能在任何網路條件下都能穩定運作，有效解決弱網環境下的數據一致性問題。</p>
+                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">Offline Independent Operation</h4>
+                            <p>Designed network-aware offline check-in system with intelligent mode switching mechanism based on Connectivity monitoring. Automatically activates independent local check-in flow when offline status detected, coupled with offline data persistence and incremental sync strategies. Built offline-first architecture ensuring core attendance functionality operates stably under any network conditions, effectively solving data consistency issues in weak network environments.</p>
                             
-                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">企業級混合推播系統重構</h4>
-                            <p>針對公司既有 APNS 原生架構設計 Method Channel 雙向通信機制整合 Firebase FCM，克服 Flutter Firebase Plugin 與企業傳統推播服務的相容性限制，透過平台特定實作統一 iOS/Android 推播機制差異，實現原生推播與本地通知的無縫整合，確保跨平台通知顯示的一致性與穩定性。</p>
+                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">Enterprise Hybrid Push System Refactoring</h4>
+                            <p>Designed Method Channel bidirectional communication mechanism to integrate Firebase FCM with company's existing APNS native architecture. Overcame compatibility limitations between Flutter Firebase Plugin and enterprise traditional push services, unified iOS/Android push mechanism differences through platform-specific implementations, achieved seamless integration of native push and local notifications, ensuring cross-platform notification display consistency and stability.</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">成果展示</h4>
+                        <h4 class="detail-title">Results & Demonstrations</h4>
                         <div class="detail-content">
                             <div class="showcase-grid">
                                 <!-- 主要功能演示影片 -->
                                 <div class="showcase-item">
                                     <div class="showcase-header">
-                                        <h5 class="showcase-title">🎬 主要功能演示</h5>
-                                        <p class="showcase-description">完整的考勤打卡流程展示</p>
+                                        <h5 class="showcase-title">🎬 Main Feature Demo</h5>
+                                        <p class="showcase-description">Complete attendance check-in process demonstration</p>
                                     </div>
                                     <div class="showcase-media">
                                         <video 
@@ -2620,7 +2620,7 @@
                                             preload="metadata"
                                             class="showcase-video">
                                             <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/attendance-app/demo.MOV" type="video/mp4">
-                                            您的瀏覽器不支援影片播放
+                                            Your browser does not support video playback
                                         </video>
                                     </div>
                                 </div>
@@ -2628,8 +2628,8 @@
                                 <!-- 離線打卡專項演示 -->
                                 <div class="showcase-item">
                                     <div class="showcase-header">
-                                        <h5 class="showcase-title">📡 離線功能演示</h5>
-                                        <p class="showcase-description">無網路環境下的智能打卡</p>
+                                        <h5 class="showcase-title">📡 Offline Feature Demo</h5>
+                                        <p class="showcase-description">Smart check-in in zero-network environment</p>
                                     </div>
                                     <div class="showcase-media">
                                         <video 
@@ -2637,7 +2637,7 @@
                                             preload="metadata"
                                             class="showcase-video">
                                             <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/attendance-app/offline_punch_demo.MOV" type="video/mp4">
-                                            您的瀏覽器不支援影片播放
+                                            Your browser does not support video playback
                                         </video>
                                     </div>
                                 </div>
@@ -2645,8 +2645,8 @@
                                 <!-- 企業部署成果 -->
                                 <div class="showcase-item">
                                     <div class="showcase-header">
-                                        <h5 class="showcase-title">🏢 企業部署</h5>
-                                        <p class="showcase-description">ABM企業級部署記錄</p>
+                                        <h5 class="showcase-title">🏢 Enterprise Deployment</h5>
+                                        <p class="showcase-description">ABM Enterprise Deployment Records</p>
                                     </div>
                                     <div class="showcase-media">
                                         <div class="showcase-image-container" onclick="openImageModal('https://raw.githubusercontent.com/robert008/resume-assets/main/attendance-app/app_store.png', 'ABM企業部署記錄')">
@@ -2655,7 +2655,7 @@
                                                 alt="ABM企業部署記錄" 
                                                 class="showcase-appstore-image">
                                             <div class="image-overlay">
-                                                <span class="overlay-text">🔍 點擊查看大圖</span>
+                                                <span class="overlay-text">🔍 Click to view full size</span>
                                             </div>
                                             <div class="enterprise-badge">
                                                 <span class="badge-label">企業級</span>
@@ -2672,36 +2672,36 @@
                 <!-- 企業級設施管理平台內容 -->
                 <div id="facility-content" class="content-details">
                     <div class="content-header">
-                        <h1 class="content-title">企業級設施管理App</h1>
-                        <p class="content-subtitle">模組化架構、Firebase 推播整合、多語系支援、即時資料同步</p>
+                        <h1 class="content-title">Enterprise Facility Management App</h1>
+                        <p class="content-subtitle">Modular Architecture, Firebase Push Integration, Multi-language Support, Real-time Data Sync</p>
                         <div class="content-description">
-                            將會議室、維修、餐飲等功能模組化開發，每個功能獨立 BLoC 管理狀態。整合 Firebase 推播通知與 WebSocket 即時通訊，支援繁簡中英三語切換，透過 WebSocket 實現即時通知。
+                            Developed meeting rooms, maintenance, catering and other functions with modular approach, each function managed independently by BLoC state management. Integrated Firebase push notifications with WebSocket real-time communication, supporting Traditional Chinese/Simplified Chinese/English language switching, implemented real-time notifications through WebSocket.
                         </div>
                     </div>
                     
                     <div class="detail-section">
-                        <h4 class="detail-title">角色與背景</h4>
+                        <h4 class="detail-title">Role & Background</h4>
                         <div class="detail-content">
-                            <p>7-8人團隊協作開發，我與另一位 Flutter 工程師負責 App 端開發。作為後期加入成員，需從原本熟悉的 Provider 狀態管理模式，快速轉換適應團隊既有的 BLoC + Riverpod 混合架構及相關技術棧。</p>
+                            <p>Collaborated in a 7-8 person development team, where I worked with another Flutter engineer on the mobile app development. As a later addition to the team, I needed to quickly transition from my familiar Provider state management approach to the team's existing BLoC + Riverpod hybrid architecture and related technology stack.</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">關鍵挑戰</h4>
+                        <h4 class="detail-title">Key Challenges</h4>
                         <div class="detail-content">
-                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">大型專案架構管理</h4>
-                            <p>約 12 萬行程式碼、531 個檔案的複雜專案開發，採用 BLoC + Riverpod 混合狀態管理架構處理複雜業務邏輯，實現會議室、設備維護、實驗室、餐飲、包裹等多功能模組化整合設計，確保大型專案的可維護性與擴展性。</p>
+                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">Large-scale Project Architecture Management</h4>
+                            <p>Complex project development with approximately 120K lines of code and 531 files, utilizing BLoC + Riverpod hybrid state management architecture to handle complex business logic. Implemented multi-functional modular integration design for meeting rooms, equipment maintenance, laboratories, catering, packages and more, ensuring maintainability and scalability of large-scale projects.</p>
                             
-                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">國際化多語言支援</h4>
-                            <p>使用 flutter_i18n 實現英文、繁體中文、簡體中文的完整多語言架構與動態語言切換功能，妥善處理不同語言的 UI 適配和文字長度變化問題，確保跨語言使用體驗的一致性。</p>
+                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">Internationalization Multi-language Support</h4>
+                            <p>Implemented comprehensive multi-language architecture using flutter_i18n for English, Traditional Chinese, and Simplified Chinese with dynamic language switching functionality. Properly handled UI adaptation and text length variation issues for different languages, ensuring consistency in cross-language user experience.</p>
                             
-                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">企業級複雜功能實現</h4>
-                            <p>建立多廠區支援體系涵蓋不同工廠、樓層、部門的權限控制，設計精細權限管理機制處理相機、儲存、通知等多重權限控制，整合設備保養、會議預約、實驗室借用等複雜企業流程，提供完整的企業數位化解決方案。</p>
+                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">Enterprise Complex Feature Implementation</h4>
+                            <p>Established multi-factory support system covering permission control for different factories, floors, and departments. Designed fine-grained permission management mechanism handling camera, storage, notification and other multi-level permission controls, integrated equipment maintenance, meeting booking, laboratory borrowing and other complex enterprise processes, providing comprehensive enterprise digital solutions.</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">成果展示</h4>
+                        <h4 class="detail-title">Results & Demonstrations</h4>
                         <div class="detail-content">
                             <div class="showcase-grid">
                                 <!-- 功能演示影片 -->
@@ -2717,7 +2717,7 @@
                                             preload="metadata"
                                             class="showcase-video">
                                             <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/facility-mgmt/demo.m4v" type="video/mp4">
-                                            您的瀏覽器不支援影片播放
+                                            Your browser does not support video playback
                                         </video>
                                     </div>
                                 </div>
@@ -2725,8 +2725,8 @@
                                 <!-- 專案架構圖 -->
                                 <div class="showcase-item">
                                     <div class="showcase-header">
-                                        <h5 class="showcase-title">🏗️ 架構設計</h5>
-                                        <p class="showcase-description">12萬行程式碼的模組化架構</p>
+                                        <h5 class="showcase-title">🏗️ Architecture Design</h5>
+                                        <p class="showcase-description">Modular architecture of 120K lines of code</p>
                                     </div>
                                     <div class="showcase-media">
                                         <div class="showcase-image-container" onclick="openImageModal('https://raw.githubusercontent.com/robert008/resume-assets/main/facility-mgmt/project_structure.png', '專案架構圖')">
@@ -2735,7 +2735,7 @@
                                                 alt="專案架構圖" 
                                                 class="showcase-image">
                                             <div class="image-overlay">
-                                                <span class="overlay-text">🔍 點擊查看大圖</span>
+                                                <span class="overlay-text">🔍 Click to view full size</span>
                                             </div>
                                         </div>
                                     </div>
@@ -2744,8 +2744,8 @@
                                 <!-- TestFlight 部署記錄 -->
                                 <div class="showcase-item">
                                     <div class="showcase-header">
-                                        <h5 class="showcase-title">🚀 TestFlight 部署</h5>
-                                        <p class="showcase-description">企業級應用的測試版本管理</p>
+                                        <h5 class="showcase-title">🚀 TestFlight Deployment</h5>
+                                        <p class="showcase-description">Enterprise app test version management</p>
                                     </div>
                                     <div class="showcase-media">
                                         <div class="showcase-image-container" onclick="openImageModal('https://raw.githubusercontent.com/robert008/resume-assets/main/facility-mgmt/apple_store.png', 'TestFlight 部署記錄')">
@@ -2754,7 +2754,7 @@
                                                 alt="TestFlight 部署記錄" 
                                                 class="showcase-appstore-image">
                                             <div class="image-overlay">
-                                                <span class="overlay-text">🔍 點擊查看大圖</span>
+                                                <span class="overlay-text">🔍 Click to view full size</span>
                                             </div>
                                             <div class="testflight-badge">
                                                 <span class="badge-label">企業部署</span>
@@ -2771,29 +2771,29 @@
                 <!-- 企業級實驗室管理系統內容 -->
                 <div id="lab-content" class="content-details">
                     <div class="content-header">
-                        <h1 class="content-title">企業級實驗室管理App</h1>
-                        <p class="content-subtitle">Flutter 跨平台開發、BLoC 架構設計、多層權限控制、即時通知推播</p>
+                        <h1 class="content-title">Enterprise Laboratory Management App</h1>
+                        <p class="content-subtitle">Flutter Cross-platform Development, BLoC Architecture Design, Multi-level Permission Control, Real-time Push Notifications</p>
                         <div class="content-description">
-                            開發實驗室設備與空間管理系統，支援設備借用、維護保養、故障修繕等完整流程。實作多層級權限控制（laboratoryEquipment-list-read 等），整合 Firebase 推播即時通知，支援四語系切換（繁中/簡中/英文/泰文）。
+                            Developed laboratory equipment and space management system supporting complete workflows for equipment borrowing, maintenance, and repair. Implemented multi-level permission control (laboratoryEquipment-list-read, etc.), integrated Firebase push notifications for real-time alerts, supporting four-language switching (Traditional Chinese/Simplified Chinese/English/Thai).
                         </div>
                     </div>
                     
                     <div class="detail-section">
-                        <h4 class="detail-title">角色與背景</h4>
+                        <h4 class="detail-title">Role & Background</h4>
                         <div class="detail-content">
-                            <p>5人敏捷開發團隊成員，與 3 名 Web 前端和 1 名 Flutter 開發夥伴協作，原企業級設施管理App因外包商與業主溝通分歧，急需在不到一個月的極限時程內將實驗室管理模組獨立成單一應用。</p>
+                            <p>5-member agile development team member，與 collaborated with 3 web frontend and 1 Flutter development partners，原企業級設施管理App因外包商與業主溝通分歧，急需在不到一個月的極限時程內將實驗室管理模組獨立成單一應用。</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">關鍵挑戰</h4>
+                        <h4 class="detail-title">Key Challenges</h4>
                         <div class="detail-content">
-                            <p>面臨極短時程內完成專案分離、重構與測試的時程壓力，在關鍵開發人員流失導致人力短缺的困境下維持開發進度，需將緊密耦合的模組安全分離避免功能缺失，同時在時間壓縮下確保新應用的穩定性與可靠性，並在複雜的外包關係中保持有效的技術溝通協調。</p>
+                            <p>Faced timeline pressure to complete project separation, refactoring and testing within extremely short deadlines. Maintained development progress despite human resource shortage caused by key developer attrition, needed to safely separate tightly coupled modules to avoid functionality loss, while ensuring stability and reliability of new applications under time constraints, maintaining effective technical communication and coordination in complex outsourcing relationships.</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">成果展示</h4>
+                        <h4 class="detail-title">Results & Demonstrations</h4>
                         <div class="detail-content">
                             <div class="showcase-grid">
                                 <!-- 實驗室管理演示影片 -->
@@ -2809,7 +2809,7 @@
                                             preload="metadata"
                                             class="showcase-video">
                                             <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/facility-lab-mgmt/demo.mov" type="video/mp4">
-                                            您的瀏覽器不支援影片播放
+                                            Your browser does not support video playback
                                         </video>
                                     </div>
                                 </div>
@@ -2817,8 +2817,8 @@
                                 <!-- TestFlight 部署記錄 -->
                                 <div class="showcase-item">
                                     <div class="showcase-header">
-                                        <h5 class="showcase-title">🚀 測試版部署</h5>
-                                        <p class="showcase-description">TestFlight 交付版本歷程</p>
+                                        <h5 class="showcase-title">🚀 Test Version Deployment</h5>
+                                        <p class="showcase-description">TestFlight delivery version history</p>
                                     </div>
                                     <div class="showcase-media">
                                         <div class="showcase-image-container" onclick="openImageModal('https://raw.githubusercontent.com/robert008/resume-assets/main/facility-lab-mgmt/testflight_record.png', '實驗室管理 TestFlight 記錄')">
@@ -2827,7 +2827,7 @@
                                                 alt="實驗室管理 TestFlight 記錄" 
                                                 class="showcase-appstore-image">
                                             <div class="image-overlay">
-                                                <span class="overlay-text">🔍 點擊查看大圖</span>
+                                                <span class="overlay-text">🔍 Click to view full size</span>
                                             </div>
                                             <div class="testflight-badge">
                                                 <span class="badge-label">急速交付</span>
@@ -2845,43 +2845,43 @@
                 <!-- 物業管理用戶端iOS版內容 -->
                 <div id="ios-content" class="content-details">
                     <div class="content-header">
-                        <h1 class="content-title">物業管理用戶端iOS版App</h1>
-                        <p class="content-subtitle">維護公司歷史悠久大型iOS專案</p>
+                        <h1 class="content-title">Property Management iOS App</h1>
+                        <p class="content-subtitle">Maintaining company's long-standing large-scale iOS project</p>
                         <div class="content-description">
-                            維護公司歷史悠久大型iOS專案，錯誤修護以及加入一些新功能
+                            Maintained company's long-standing large-scale iOS project, bug fixes and adding new features
                         </div>
                     </div>
                     
                     <div class="detail-section">
-                        <h4 class="detail-title">角色與背景</h4>
+                        <h4 class="detail-title">Role & Background</h4>
                         <div class="detail-content">
-                            <p>獨立維護公司運作多年的 iOS App，該專案採用 Objective-C、Swift、Flutter 混合技術架構，經過多年發展和多位開發者不同風格的程式碼累積，由於開發時程緊迫缺乏完整文件記錄與規格說明，需在複雜的混合代碼環境中進行維護和功能開發。</p>
+                            <p>Independently maintained company's long-running iOS App. This project adopted Objective-C, Swift, Flutter hybrid technology architecture, accumulated through years of development and multiple developers' different coding styles. Due to tight development schedules lacking complete documentation and specification, required maintenance and feature development in complex mixed-code environment.</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">關鍵挑戰</h4>
+                        <h4 class="detail-title">Key Challenges</h4>
                         <div class="detail-content">
-                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">技術債務累積</h4>
-                            <p>專案經過多人接手開發，累積了不同編碼風格的混合程式碼，同時使用 Objective-C、Swift、Flutter 三種技術架構，導致部分程式碼（如複雜的 delegate 鏈）已無人完全理解，形成嚴重的技術債務和維護困難。</p>
+                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">Technical Debt Accumulation</h4>
+                            <p>Project passed through multiple developers, accumulating mixed code with different coding styles，simultaneously using three technology architectures: Objective-C, Swift, Flutter，resulting in some code (such as complex delegate chains) no longer fully understood by anyone，creating serious technical debt and maintenance difficulties。</p>
                             
-                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">維護模式的限制</h4>
-                            <p>在時間壓力下進行 bug 修復，只能採取最小幅度修改策略，避免大規模架構重構以防影響其他功能模組，形成保守維護模式的技術約束。</p>
+                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">Maintenance Mode Limitations</h4>
+                            <p>performing bug fixes under time pressure，could only adopt minimal modification strategies，avoiding large-scale architectural refactoring to prevent affecting other functional modules，forming conservative maintenance mode technical constraints。</p>
                             
-                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">多Target複雜度管理</h4>
-                            <p>維護包含 10+ 個 target 的複雜 iOS App，需針對每個客戶的差異化需求進行客製化開發，任何程式碼改動都必須確保不影響其他品牌版本的功能穩定性，增加了開發和測試的複雜度。</p>
+                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">Multi-Target Complexity Management</h4>
+                            <p>Maintained complex iOS App containing 10+ targets，required customized development for each customer's differentiated requirements，any code changes must ensure no impact on functional stability of other brand versions，increased complexity of development and testing。</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">成果展示</h4>
+                        <h4 class="detail-title">Results & Demonstrations</h4>
                         <div class="detail-content">
                             <div class="showcase-grid">
                                 <!-- App Store 展示 -->
                                 <div class="showcase-item">
                                     <div class="showcase-header">
-                                        <h5 class="showcase-title">📱 App Store 展示</h5>
-                                        <p class="showcase-description">多版本iOS應用的市場表現</p>
+                                        <h5 class="showcase-title">📱 App Store Showcase</h5>
+                                        <p class="showcase-description">Multi-version iOS app market performance</p>
                                     </div>
                                     <div class="showcase-media">
                                         <div class="showcase-image-container" onclick="openImageModal('https://raw.githubusercontent.com/robert008/resume-assets/main/crm-ios/appstore.png', '物業管理 App Store 展示')">
@@ -2890,7 +2890,7 @@
                                                 alt="物業管理 App Store 展示" 
                                                 class="showcase-appstore-image">
                                             <div class="image-overlay">
-                                                <span class="overlay-text">🔍 點擊查看大圖</span>
+                                                <span class="overlay-text">🔍 Click to view full size</span>
                                             </div>
                                             <div class="appstore-badge">
                                                 <span class="badge-label">多版本</span>
@@ -2907,36 +2907,36 @@
                 <!-- 雪霸國家公園 iOS App 內容 -->
                 <div id="sheipa-ios-content" class="content-details">
                     <div class="content-header">
-                        <h1 class="content-title">雪霸國家公園 iOS App</h1>
-                        <p class="content-subtitle">Objective-C 原生開發、已讀未讀推播系統、位置服務整合、RESTful API 串接</p>
+                        <h1 class="content-title">Shei-Pa National Park iOS App</h1>
+                        <p class="content-subtitle">Objective-C Native Development, Read/Unread Push System, Location Service Integration, RESTful API Connection</p>
                         <div class="content-description">
-                            台灣雪霸國家公園官方入園管理應用，提供登山客空中報到、推播訊息、地圖導航、安全回報等功能。實作智能推播已讀未讀狀態管理，整合 Core Location 定位服務，支援離線地標資料查詢與 AR 擴增實境地標可視化。
+                            Official Shei-Pa National Park entrance management application，providing hikers with aerial check-in, push messages, map navigation, safety reporting and other functions。implemented intelligent push notification read/unread status management，整合 Core Location 定位服務，supporting offline landmark data query and AR augmented reality landmark visualization。
                         </div>
                     </div>
                     
                     <div class="detail-section">
-                        <h4 class="detail-title">角色與背景</h4>
+                        <h4 class="detail-title">Role & Background</h4>
                         <div class="detail-content">
-                            <p>獨立維護既有 iOS原生應用 App。需在原有應用架構存在技術債務問題上協助客戶解決問題。</p>
+                            <p>Independently maintained existing iOS native application App。needed to assist clients in solving problems with existing application architecture technical debt issues。</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">關鍵挑戰</h4>
+                        <h4 class="detail-title">Key Challenges</h4>
                         <div class="detail-content">
-                            <p>面對高度耦合的 Objective-C舊代碼架構進行功能增強，需在不破壞現有穩定功能的前提下實現複雜的推播狀態管理邏輯。</p>
+                            <p>Faced highly coupled legacy Objective-C code architecture進行功能增強，需在不破壞現有穩定功能的前提下實現複雜的推播狀態管理邏輯。</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">成果展示</h4>
+                        <h4 class="detail-title">Results & Demonstrations</h4>
                         <div class="detail-content">
                             <div class="showcase-grid">
                                 <!-- 雪霸國家公園功能演示 -->
                                 <div class="showcase-item">
                                     <div class="showcase-header">
-                                        <h5 class="showcase-title">🏔️ 國家公園功能演示</h5>
-                                        <p class="showcase-description">推播、簽到、位置追蹤系統</p>
+                                        <h5 class="showcase-title">🏔️ National Park Feature Demo</h5>
+                                        <p class="showcase-description">Push notifications, check-in, location tracking system</p>
                                     </div>
                                     <div class="showcase-media">
                                         <video 
@@ -2944,7 +2944,7 @@
                                             preload="metadata"
                                             class="showcase-video">
                                             <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/spnational-park-ios/demo.mov" type="video/mp4">
-                                            您的瀏覽器不支援影片播放
+                                            Your browser does not support video playback
                                         </video>
                                     </div>
                                 </div>
@@ -2956,36 +2956,36 @@
                 <!-- 國家公園 iOS App 內容 -->
                 <div id="national-park-ios-content" class="content-details">
                     <div class="content-header">
-                        <h1 class="content-title">國家公園 iOS App</h1>
-                        <p class="content-subtitle">iOS 原生開發、RESTful API 整合、推播通知系統、位置服務、UI/UX 重構</p>
+                        <h1 class="content-title">National Parks Platform iOS App</h1>
+                        <p class="content-subtitle">iOS Native Development, RESTful API Integration, Push Notification System, Location Services, UI/UX Refactoring</p>
                         <div class="content-description">
-                            原雪霸國家公園官方行動應用程式改寫成新 App，提供登山者完整的入園服務體驗，包含空中報到簽退、步道地圖導航、緊急求救簡訊、推播訊息通知等核心功能。
+                            Rewritten original Shei-Pa National Park official mobile application into new App，providing hikers with comprehensive park entry service experience，including aerial check-in/check-out, trail map navigation, emergency SMS, push message notifications and other core functions。
                         </div>
                     </div>
                     
                     <div class="detail-section">
-                        <h4 class="detail-title">角色與背景</h4>
+                        <h4 class="detail-title">Role & Background</h4>
                         <div class="detail-content">
-                            <p>需獨立開發新 App，將原本的雪霸 App 專案雪霸國家公園APP的系統重構與平台化改造，將原有單一公園應用擴展為支援三個國家公園（雪霸、太魯閣、玉山）的統一平台，包含API架構重構、多租戶支援、UI模組化等工作。</p>
+                            <p>Required to independently develop new App，Transform original Shei-Pa App project雪霸國家公園APP的系統重構與平台化改造，將原有單一公園應用擴展為支援三個國家公園（雪霸、太魯閣、玉山）的統一平台，包含API架構重構、多租戶支援、UI模組化等工作。</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">關鍵挑戰</h4>
+                        <h4 class="detail-title">Key Challenges</h4>
                         <div class="detail-content">
-                            <p>將API從 SOAP 協定的 .asmx 服務遷移至 RESTful API，同時需要重新設計推播通知的讀取狀態管理機制。面對缺乏完整技術文件的遺留程式碼，必須透過逆向工程理解原有邏輯，並在維持向後相容性的前提下實現功能優化。</p>
+                            <p>Migrated API from SOAP protocol .asmx service to RESTful API，同時需要redesigned push notification read status management mechanism。面對缺乏完整技術文件的遺留程式碼，必須透過逆向工程理解原有邏輯，並在維持向後相容性的前提下實現功能優化。</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">成果展示</h4>
+                        <h4 class="detail-title">Results & Demonstrations</h4>
                         <div class="detail-content">
                             <div class="showcase-grid">
                                 <!-- 平台化重構演示 -->
                                 <div class="showcase-item">
                                     <div class="showcase-header">
-                                        <h5 class="showcase-title">🏞️ 平台化重構演示</h5>
-                                        <p class="showcase-description">三個國家公園統一平台</p>
+                                        <h5 class="showcase-title">🏞️ Platform Refactoring Demo</h5>
+                                        <p class="showcase-description">Unified platform for three national parks</p>
                                     </div>
                                     <div class="showcase-media">
                                         <video 
@@ -2993,7 +2993,7 @@
                                             preload="metadata"
                                             class="showcase-video">
                                             <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/national-park-ios/demo.mov" type="video/mp4">
-                                            您的瀏覽器不支援影片播放
+                                            Your browser does not support video playback
                                         </video>
                                     </div>
                                 </div>
@@ -3005,37 +3005,37 @@
                 <!-- 跨域緊急救援推播系統內容 -->
                 <div id="emergency-push-content" class="content-details">
                     <div class="content-header">
-                        <h1 class="content-title">跨域緊急救援-PHP推播系統</h1>
-                        <p class="content-subtitle">PHP Laravel 快速上手、Legacy 系統分析、多平台推播修復、緊急專案交付</p>
+                        <h1 class="content-title">Emergency Rescue - PHP Push System</h1>
+                        <p class="content-subtitle">PHP Laravel Quick Start, Legacy System Analysis, Multi-platform Push Repair, Emergency Project Delivery</p>
                         <div class="content-description">
-                            在原開發者離職且無文件的緊急狀況下，承接企業級推播系統維護任務。以 App 開發背景快速學習 PHP Laravel 框架，在既有 App 開發期程內同步完成推播系統修復。
+                            Under emergency circumstances of original developer departure and no documentation，took on enterprise-grade push system maintenance tasks。rapidly learned PHP Laravel framework with App development background，synchronously completed push system repairs within existing App development timeline。
                         </div>
                     </div>
                     
                     <div class="detail-section">
-                        <h4 class="detail-title">背景與角色</h4>
+                        <h4 class="detail-title">Background & Role</h4>
                         <div class="detail-content">
-                            <p>面臨團隊技術斷層的緊急狀況：公司多 App 共用推播系統因原開發者離職且未留下開發文件，導致後端工程師無法有效維護商業邏輯與推播流程。在主管要求限時交付的壓力下，跳出 Flutter App 開發舒適圈，承接從未接觸過的 PHP Laravel 後端推播開發任務，並需在原有App 開發期程內同步完成兩項專案交付。</p>
+                            <p>Faced emergency situation of team technical gap：公司多 App 共用推播系統因原開發者離職且未留下開發文件，導致後端工程師無法有效維護商業邏輯與推播流程。Under management pressure for time-limited delivery，stepped out of Flutter App development comfort zone，took on never-before-encountered PHP Laravel backend push development tasks，並需在原有App 開發期程內同步完成兩項專案交付。</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">關鍵挑戰</h4>
+                        <h4 class="detail-title">Key Challenges</h4>
                         <div class="detail-content">
-                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">零基礎 PHP 快速戰力化</h4>
-                            <p>面對完全陌生的 PHP Laravel 技術棧與無文件 Legacy 系統，透過逆向工程分析既有程式碼架構，快速理解多租戶推播服務的核心邏輯與資料流程。在緊迫時程壓力下找出關鍵的程式區段，且要在不影響原先程式運作的前提下，加入新的 android 推播程式(因為原先的 Android Legacy FCM Key已經不能再使用)，最終成功打通 Android/iOS 雙平台推播鏈路，確保專案如期交付。</p>
+                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">Zero-foundation PHP Rapid Deployment</h4>
+                            <p>Faced completely unfamiliar PHP Laravel tech stack and undocumented Legacy system，analyzed existing code architecture through reverse engineering，quickly understood core logic and data flow of multi-tenant push services。identified key code segments under urgent timeline pressure，while ensuring no impact on original program operation，added new Android push program(因為original Android Legacy FCM Key was no longer usable)，successfully established Android/iOS dual-platform push chain，ensuring on-time project delivery。</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">成果展示</h4>
+                        <h4 class="detail-title">Results & Demonstrations</h4>
                         <div class="detail-content">
                             <div class="showcase-grid">
                                 <!-- 推播系統架構圖 -->
                                 <div class="showcase-item">
                                     <div class="showcase-header">
-                                        <h5 class="showcase-title">🚨 推播系統架構</h5>
-                                        <p class="showcase-description">Laravel 多租戶推播服務架構</p>
+                                        <h5 class="showcase-title">🚨 Push System Architecture</h5>
+                                        <p class="showcase-description">Laravel multi-tenant push service architecture</p>
                                     </div>
                                     <div class="showcase-media">
                                         <div class="showcase-image-container" onclick="openImageModal('https://raw.githubusercontent.com/robert008/resume-assets/main/emergency-push/project_structure.png', '緊急推播系統架構圖')">
@@ -3044,7 +3044,7 @@
                                                 alt="緊急推播系統架構圖" 
                                                 class="showcase-image">
                                             <div class="image-overlay">
-                                                <span class="overlay-text">🔍 點擊查看大圖</span>
+                                                <span class="overlay-text">🔍 Click to view full size</span>
                                             </div>
                                         </div>
                                     </div>
@@ -3057,37 +3057,37 @@
                 <!-- AI智能保全 App 內容 -->
                 <div id="ai-security-content" class="content-details">
                     <div class="content-header">
-                        <h1 class="content-title">AI智能保全 App</h1>
-                        <p class="content-subtitle">Flutter 架構重構、AI 模型管理、FFI 整合、協力開發交付</p>
+                        <h1 class="content-title">AI Smart Security App</h1>
+                        <p class="content-subtitle">Flutter Architecture Refactoring, AI Model Management, FFI Integration, Collaborative Development Delivery</p>
                         <div class="content-description">
-                            在不影響主系統穩定性前提下，完整整合企業級臉部辨識系統。從既有專案移植完整功能模組，實作 AI模型動態下載、權限分層控制，成功加入臉部驗證機制。
+                            without affecting main system stability，comprehensive integration of enterprise-grade facial recognition system。migrated complete functional modules from existing projects，implemented AI model dynamic download and permission layered control，successfully integrated facial verification mechanism。
                         </div>
                     </div>
                     
                     <div class="detail-section">
-                        <h4 class="detail-title">背景與角色</h4>
+                        <h4 class="detail-title">Background & Role</h4>
                         <div class="detail-content">
-                            <p>協力開發任務，需將公司考勤專案的臉部辨識系統完整移植到智能安全守護平台。</p>
+                            <p>Collaborative development task requiring complete migration of company's attendance project facial recognition system to intelligent security platform。</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">關鍵挑戰</h4>
+                        <h4 class="detail-title">Key Challenges</h4>
                         <div class="detail-content">
-                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">不同架構模組化整合</h4>
-                            <p>面對既有專案的 MVVM 架構與目標專案的 BLoC Clean Architecture 差異，需要在不破壞原有設計模式的前提下完成整合。透過分析兩個架構的數據流差異，設計適配層將臉部辨識模組無縫整合到認證 BLoC 中，並實作 AI 模型狀態管理、權限分層檢查、登出安全清理等機制。成功建立符合 Clean Architecture原則的企業級臉部辨識系統，確保代碼可維護性與系統穩定性。</p>
+                            <h4 style="color: #2c3e50; margin: 25px 0 10px 0; font-size: 1.1em; border-left: 4px solid #3498db; padding-left: 10px;">Cross-Architecture Modular Integration</h4>
+                            <p>Faced architectural differences between existing project's MVVM and target project's BLoC Clean Architecture, needed to complete integration without breaking original design patterns. Analyzed data flow differences between two architectures, designed adapter layer to seamlessly integrate face recognition module into authentication BLoC, implemented AI model state management, permission layered checking, logout security cleanup and other mechanisms. Successfully established enterprise-grade face recognition system conforming to Clean Architecture principles, ensuring code maintainability and system stability.</p>
                         </div>
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">成果展示</h4>
+                        <h4 class="detail-title">Results & Demonstrations</h4>
                         <div class="detail-content">
                             <div class="showcase-grid">
                                 <!-- AI智能保全演示 -->
                                 <div class="showcase-item">
                                     <div class="showcase-header">
-                                        <h5 class="showcase-title">🤖 AI智能保全演示</h5>
-                                        <p class="showcase-description">MVVM → BLoC 架構整合成果</p>
+                                        <h5 class="showcase-title">🤖 AI Smart Security Demo</h5>
+                                        <p class="showcase-description">MVVM → BLoC architecture integration results</p>
                                     </div>
                                     <div class="showcase-media">
                                         <video 
@@ -3095,7 +3095,7 @@
                                             preload="metadata"
                                             class="showcase-video">
                                             <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/security-app/demo.MOV" type="video/mp4">
-                                            您的瀏覽器不支援影片播放
+                                            Your browser does not support video playback
                                         </video>
                                     </div>
                                 </div>
