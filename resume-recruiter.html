@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Chuang - Mobile App Solution Developer</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 標題區 */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #2c3e50;
+        }
+
+        .name {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 1.3em;
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 0.95em;
+            color: #555;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* 專業簡介 */
+        .summary {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+
+        .summary-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .summary-content {
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* 技能區塊 */
+        .skills-section {
+            margin: 25px 0;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 12px 20px;
+            font-size: 0.95em;
+        }
+
+        .skill-category {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .skill-items {
+            color: #555;
+        }
+
+        /* 工作經驗 */
+        .experience-section {
+            margin: 25px 0;
+        }
+
+        .job {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .job-header {
+            margin-bottom: 8px;
+        }
+
+        .job-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .company-info {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin: 5px 0;
+        }
+
+        .job-period {
+            font-size: 0.9em;
+            color: #95a5a6;
+            font-style: italic;
+        }
+
+        .job-highlights {
+            margin-top: 10px;
+        }
+
+        .job-highlights ul {
+            margin-left: 20px;
+            font-size: 0.92em;
+            color: #444;
+        }
+
+        .job-highlights li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+
+        /* 作品集連結 */
+        .portfolio-section {
+            margin: 25px 0;
+            padding: 20px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .portfolio-label {
+            font-size: 1em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-link {
+            font-size: 0.9em;
+            color: #3498db;
+            word-break: break-all;
+            text-decoration: none;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+
+        .portfolio-link:hover {
+            text-decoration: underline;
+        }
+
+        .portfolio-note {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            margin-top: 8px;
+        }
+
+        /* 打印優化 */
+        @media print {
+            body {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 標題區 -->
+    <div class="header">
+        <h1 class="name">Robert Chuang (莊)</h1>
+        <p class="title">Mobile App Solution Developer</p>
+        <div class="contact-info">
+            <span class="contact-item">📧 figo007007@gmail.com</span>
+            <span class="contact-item">📍 Taiwan, Taichung</span>
+        </div>
+    </div>
+
+    <!-- 專業簡介 -->
+    <div class="summary">
+        <h2 class="summary-title">Professional Summary 專業簡介</h2>
+        <p class="summary-content">
+            擁有 16 年 iOS 與跨平台開發經驗，專精於 Swift/Objective-C/Flutter/C++，專長於複雜系統架構設計、效能優化與 AI 技術整合。曾主導伺服器級 AI 辨識系統移植至行動端並封裝為 Flutter Plugin，將辨識效率從 3-5 秒提升至 0.5 秒內。參與多個企業級應用（員工考勤、設施管理、推播平台）及政府合作專案（國家公園 App 系列），具備從技術評估、架構設計到交付上線的完整能力。熟悉大型專案管理、跨平台整合及高壓時程下的穩定交付。
+        </p>
+    </div>
+
+    <!-- 核心技能 -->
+    <div class="skills-section">
+        <h2 class="section-title">Core Skills 核心技能</h2>
+        <div class="skills-grid">
+            <div class="skill-category">Mobile Platforms</div>
+            <div class="skill-items">iOS (Objective-C, Swift) / Flutter (Dart) / Android (Kotlin, Java)</div>
+
+            <div class="skill-category">Architecture & Design</div>
+            <div class="skill-items">MVVM, BLoC, Clean Architecture, Modular Design, Performance Optimization</div>
+
+            <div class="skill-category">AI & Native Integration</div>
+            <div class="skill-items">C++, FFI, ONNX Runtime, OpenCV, On-device AI, Face Recognition</div>
+
+            <div class="skill-category">Backend & API</div>
+            <div class="skill-items">PHP Laravel, RESTful API, Firebase (FCM, Messaging), WebSocket, Push Notifications (APNs, FCM)</div>
+
+            <div class="skill-category">State Management</div>
+            <div class="skill-items">Provider, BLoC, Riverpod, Hive (Offline Storage)</div>
+
+            <div class="skill-category">Development Tools</div>
+            <div class="skill-items">Git, CocoaPods, CI/CD, Xcode, Android Studio, Multi-target Management</div>
+
+            <div class="skill-category">Specialized Features</div>
+            <div class="skill-items">Offline-first Architecture, Beacon Indoor Positioning, i18n/Localization, QR Code Integration</div>
+        </div>
+    </div>
+
+    <!-- 工作經驗（近5-7年） -->
+    <div class="experience-section">
+        <h2 class="section-title">Work Experience 工作經驗</h2>
+
+        <!-- 當前職位 -->
+        <div class="job">
+            <div class="job-header">
+                <h3 class="job-title">Senior iOS/Flutter Engineer 資深工程師</h3>
+                <p class="company-info">億集創見應用科技股份有限公司 (EZPlus Technology)</p>
+                <p class="job-period">2024/11 ~ Present</p>
+            </div>
+            <div class="job-highlights">
+                <ul>
+                    <li><strong>AI 技術整合</strong>：主導伺服器級人臉辨識系統移植至 Flutter 行動端，採用 FFI + C++ 架構，將辨識效率從 3-5 秒優化至 0.5 秒內，並封裝為 Flutter Plugin 通過 App Store 審核</li>
+                    <li><strong>企業級應用開發</strong>：獨立開發員工考勤管理系統（整合人臉識別、Beacon 定位、離線優先架構、防作弊機制）</li>
+                    <li><strong>大型專案協作</strong>：參與 12 萬行程式碼、531 檔案的企業級設施管理平台開發，負責 BLoC + Riverpod 混合架構設計與多語系支援（繁中/簡中/英文）</li>
+                    <li><strong>跨域技術救援</strong>：以 App 開發背景快速學習 PHP Laravel，在緊急狀況下接手企業級推播系統維護，成功打通 Android/iOS 雙平台推播鏈路</li>
+                    <li><strong>技術範疇</strong>：Flutter, iOS (Objective-C/Swift), C++, PHP Laravel, Firebase, RESTful API, 架構設計, 效能優化</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 馥鴻科技 -->
+        <div class="job">
+            <div class="job-header">
+                <h3 class="job-title">Senior Flutter Engineer 資深工程師</h3>
+                <p class="company-info">馥鴻科技股份有限公司 (FUHOM Technology) - Team Lead (5-8人)</p>
+                <p class="job-period">2023/10 ~ 2024/8 (11個月)</p>
+            </div>
+            <div class="job-highlights">
+                <ul>
+                    <li>開發公司內部 Flutter App，整合 DVR、IP Camera 等硬體設備 API</li>
+                    <li>負責 Native iOS/Android 與 Flutter 的雙向介接與模組整合</li>
+                    <li>管理 5-8 人技術團隊，負責技術決策與任務分配</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 天眼衛星 -->
+        <div class="job">
+            <div class="job-header">
+                <h3 class="job-title">Senior iOS Engineer & iOS Team Lead 資深iOS工程師 / iOS 平台負責人</h3>
+                <p class="company-info">天眼衛星科技股份有限公司 (SkyEye Satellite Technology)</p>
+                <p class="job-period">2015/10 ~ 2023/7 (7年10個月)</p>
+            </div>
+            <div class="job-highlights">
+                <ul>
+                    <li><strong>團隊領導</strong>：帶領 App Team 規劃與交付專案，協調 PM/後端/UI/Android 團隊，確保產品如期上線</li>
+                    <li><strong>平台負責人</strong>：擔任 iOS 平台主要負責人，負責所有核心模組開發、架構設計與維護</li>
+                    <li><strong>團隊培育</strong>：訓練並指導新進工程師，建立程式規範與開發流程，提升團隊整體戰力</li>
+                    <li><strong>技術革新</strong>：主導 API 架構遷移（SOAP → RESTful），實現平台化改造與多租戶支援</li>
+                    <li><strong>複雜架構管理</strong>：設計多 Target 架構，維護 10+ 客製化品牌版本，確保穩定性與延展性</li>
+                    <li><strong>專案成果</strong>：
+                        <ul style="margin-top: 5px;">
+                            <li>政府標案：台中、嘉義、雲林、高雄等清潔車服務 App</li>
+                            <li>企業專案：黑貓宅急便、奇美實業、全球快遞</li>
+                            <li>大型活動：大甲媽祖進香活動 App（數萬人同時上線）</li>
+                            <li>國家公園系列：雪霸國家公園 iOS App、國家公園統一平台（支援雪霸/太魯閣/玉山）</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 作品集連結 -->
+    <div class="portfolio-section">
+        <p class="portfolio-label">📱 完整專案作品集 (Interactive Portfolio with Video Demos)</p>
+        <a href="https://robert008.github.io/resume-assets/" class="portfolio-link" target="_blank">
+            https://robert008.github.io/resume-assets/
+        </a>
+        <p class="portfolio-note">包含 9 個技術專案的詳細展示、演示影片、架構圖表及技術挑戰說明</p>
+    </div>
+
+    <!-- 教育背景 -->
+    <div class="experience-section" style="margin-top: 25px;">
+        <h2 class="section-title">Education 學歷</h2>
+        
+        <div class="job" style="border: none; padding-bottom: 10px;">
+            <div class="job-header">
+                <h3 class="job-title">逢甲大學 Feng Chia University</h3>
+                <p class="company-info">建設與專案管理學系 碩士 Master's Degree</p>
+                <p class="job-period">2019/6 ~ 2021/6</p>
+            </div>
+        </div>
+
+        <div class="job" style="border: none; padding-bottom: 10px;">
+            <div class="job-header">
+                <h3 class="job-title">義守大學 I-Shou University</h3>
+                <p class="company-info">資訊工程系 學士 Bachelor's Degree in Computer Science</p>
+                <p class="job-period">2003/7 ~ 2008/7</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
