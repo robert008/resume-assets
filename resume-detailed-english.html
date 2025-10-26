@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Chuang - Complete Technical Portfolio</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page {
+            page-break-after: always;
+            min-height: 297mm;
+            padding: 20px 0;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 250mm;
+        }
+
+        .cover-header {
+            margin-bottom: 40px;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 30px;
+        }
+
+        .cover-name {
+            font-size: 3em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .cover-title {
+            font-size: 1.5em;
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .cover-timeline {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        .cover-links {
+            margin-top: 50px;
+        }
+
+        .link-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .github-section {
+            background: #fff5f0 !important;
+            border-left: 4px solid #ff9800 !important;
+        }
+
+        .link-label {
+            font-size: 1em;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .link-url {
+            font-family: 'Monaco', 'Menlo', monospace;
+            color: #3498db;
+            font-size: 0.9em;
+            word-break: break-all;
+            margin-bottom: 8px;
+        }
+
+        .github-url {
+            color: #ff9800 !important;
+        }
+
+        .link-description {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .summary-section {
+            margin: 40px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+
+        .summary-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .summary-content {
+            font-size: 1em;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 12px 20px;
+            font-size: 0.95em;
+            margin: 20px 0;
+        }
+
+        .skill-category {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .skill-items {
+            color: #555;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cover Page -->
+    <div class="page cover-page">
+        <div class="cover-header">
+            <h1 class="cover-name">Robert Chuang</h1>
+            <p class="cover-title">Senior Mobile App Solution Architect</p>
+            <p class="cover-timeline">Technical Portfolio Since 2024-11</p>
+        </div>
+
+        <div class="contact-info">
+            📧 figo007007@gmail.com | 📍 Taichung, Taiwan | 🌐 Open to Remote Work
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="summary-section">
+            <h2 class="summary-title">Professional Summary</h2>
+            <p class="summary-content">
+                <strong>Senior Mobile Solution Architect</strong> with <strong>16 years</strong> of expertise in iOS and cross-platform development, specializing in <strong>AI integration, performance optimization, and complex system architecture design</strong>. Proven track record of migrating server-side AI recognition systems to mobile platforms using <strong>C++ FFI architecture</strong>, achieving <strong>90% performance improvement</strong> (5s → 0.5s response time). Led enterprise-grade applications serving government agencies and Fortune 500 companies. Expert in <strong>Swift, Objective-C, Flutter, C++</strong> with deep experience in <strong>large-scale modular architecture, multi-target management, and cross-platform integration</strong>. Strong advocate for <strong>AI-powered development workflows</strong> and rapid technology adoption.
+            </p>
+        </div>
+
+        <!-- Core Technologies -->
+        <div class="summary-section">
+            <h2 class="summary-title">Core Technologies & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">Mobile Platforms</div>
+                <div class="skill-items"><strong>iOS (Swift, Objective-C), Flutter (Dart), Android (Java)</strong></div>
+
+                <div class="skill-category">AI & Performance</div>
+                <div class="skill-items"><strong>On-device AI, C++ FFI, ONNX Runtime, OpenCV, Performance Optimization</strong></div>
+
+                <div class="skill-category">Architecture & Design</div>
+                <div class="skill-items"><strong>MVVM, BLoC, Clean Architecture, Modular Design, Cross-platform Integration</strong></div>
+
+                <div class="skill-category">Backend Integration</div>
+                <div class="skill-items"><strong>PHP Laravel, RESTful API, Firebase, WebSocket, Push Notifications</strong></div>
+
+                <div class="skill-category">Enterprise & DevOps</div>
+                <div class="skill-items"><strong>Multi-target Management, Static/Dynamic Libraries, CI/CD, Team Leadership</strong></div>
+            </div>
+        </div>
+
+        <!-- Links -->
+        <div class="cover-links">
+            <div class="link-section">
+                <p class="link-label">🌐 Complete Interactive Portfolio</p>
+                <p class="link-url">https://robert008.github.io/resume-assets/index-english.html</p>
+                <p class="link-description">Interactive showcase with 9 technical projects, video demos, and architecture diagrams</p>
+            </div>
+            
+            <div class="link-section github-section">
+                <p class="link-label">🔬 Technical Research & Open Source</p>
+                <p class="link-url github-url">https://github.com/robert008/flutter_face_kit</p>
+                <p class="link-description">Flutter Face Kit SDK - Complete face recognition solution with downloadable source code, demonstrating server-to-mobile AI migration expertise</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Professional Experience Summary -->
+    <div class="page">
+        <h1 style="color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; margin-bottom: 30px;">Professional Experience Highlights</h1>
+        
+        <div style="margin-bottom: 30px;">
+            <h2 style="color: #3498db; margin-bottom: 15px;">🚀 Current Role: Senior iOS/Flutter Engineer & AI Integration Lead</h2>
+            <p style="font-weight: 600; margin-bottom: 10px;">EZPlus Technology Co., Ltd. | November 2024 ~ Present</p>
+            
+            <h3 style="color: #2c3e50; margin: 20px 0 10px 0;">Key Achievements:</h3>
+            <ul style="margin-left: 20px; line-height: 1.7;">
+                <li><strong>AI System Migration Leadership:</strong> Spearheaded migration of server-side facial recognition system to mobile platform using Flutter FFI + C++ architecture, achieving 90% performance improvement from 5 seconds to 500ms response time</li>
+                <li><strong>Apple Store Compliance:</strong> Successfully overcame Apple's Nested Dynamic Frameworks limitation by converting to static library compilation</li>
+                <li><strong>Enterprise Application Development:</strong> Independently developed employee attendance management system with face recognition, Beacon indoor positioning, and offline-first architecture</li>
+                <li><strong>Cross-domain Technical Rescue:</strong> Rapidly learned PHP Laravel from zero to production-ready, restored enterprise push notification system for multiple apps</li>
+                <li><strong>Open Source Contribution:</strong> Published Flutter Face Kit SDK demonstrating complete face recognition solution with registration + recognition capabilities</li>
+            </ul>
+        </div>
+
+        <div style="margin-bottom: 30px;">
+            <h2 style="color: #3498db; margin-bottom: 15px;">🏗️ Previous Role: iOS Platform Lead & Team Management</h2>
+            <p style="font-weight: 600; margin-bottom: 10px;">SkyEye Satellite Technology Co., Ltd. | October 2015 ~ July 2023 (7 years 10 months)</p>
+            
+            <h3 style="color: #2c3e50; margin: 20px 0 10px 0;">Leadership & Deliveries:</h3>
+            <ul style="margin-left: 20px; line-height: 1.7;">
+                <li><strong>Cross-functional Team Leadership:</strong> Led App team coordination with PM, Backend, UI, and Android teams</li>
+                <li><strong>Platform Ownership:</strong> Served as primary iOS platform owner for all core module development and architecture design</li>
+                <li><strong>API Architecture Modernization:</strong> Led migration from SOAP (.asmx) to RESTful API with multi-tenant support</li>
+                <li><strong>Multi-target Management:</strong> Designed and maintained 10+ customized brand versions</li>
+                <li><strong>Government Contracts:</strong> Waste management apps for Taichung, Chiayi, Yunlin, Kaohsiung</li>
+                <li><strong>Enterprise Projects:</strong> Yamato Transport (Black Cat), Chi Mei Corporation, Global Express</li>
+                <li><strong>National Park Series:</strong> Shei-Pa, Taroko, and Yushan unified platform</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
