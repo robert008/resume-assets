@@ -501,6 +501,31 @@
             font-family: 'Monaco', 'Menlo', monospace;
         }
 
+        /* Freelance Badge Styling */
+        .freelance-badge {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 8px 0;
+            padding: 4px 8px;
+            background: rgba(46, 204, 113, 0.15);
+            border: 1px solid rgba(46, 204, 113, 0.4);
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+
+        .freelance-icon {
+            font-size: 0.8em;
+        }
+
+        .freelance-text {
+            font-size: 0.75em;
+            color: #27ae60;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .opensource-header {
             display: flex;
             justify-content: space-between;
@@ -1363,6 +1388,10 @@
                 <div class="project-nav-item flagship" onclick="showProject('sheipa-ios')">
                     <span class="nav-project-level">★</span>
                     <h3 class="nav-project-title">Shei-Pa National Park iOS App</h3>
+                    <div class="freelance-badge">
+                        <span class="freelance-icon">📋</span>
+                        <span class="freelance-text">Independent Contract</span>
+                    </div>
                     <div class="nav-tech-stack">
                         <span class="nav-tech-tag">Objective-C</span>
                         <span class="nav-tech-tag">UIKit</span>
@@ -1375,6 +1404,10 @@
                 <div class="project-nav-item flagship" onclick="showProject('national-park-ios')">
                     <span class="nav-project-level">★</span>
                     <h3 class="nav-project-title">National Parks Platform iOS App</h3>
+                    <div class="freelance-badge">
+                        <span class="freelance-icon">🏛️</span>
+                        <span class="freelance-text">Government Contract</span>
+                    </div>
                     <div class="nav-tech-stack">
                         <span class="nav-tech-tag">Objective-C</span>
                         <span class="nav-tech-tag">UIKit</span>
