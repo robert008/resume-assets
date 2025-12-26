@@ -1282,6 +1282,78 @@
                 transform: translateY(0);
             }
         }
+
+        /* Flutter FFI SDK - pub.dev Packages */
+        .github-section {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .github-title {
+            font-size: 1.1em;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .github-title svg {
+            width: 20px;
+            height: 20px;
+            fill: #ffffff;
+        }
+
+        .github-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .github-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 12px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .github-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-color: rgba(52, 152, 219, 0.5);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .github-item-title {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #3498db;
+            margin-bottom: 4px;
+        }
+
+        .github-item-desc {
+            font-size: 0.78em;
+            color: #bdc3c7;
+            line-height: 1.3;
+        }
+
+        .github-item-tag {
+            display: inline-block;
+            background: rgba(52, 152, 219, 0.2);
+            color: #3498db;
+            font-size: 0.68em;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-top: 6px;
+        }
     </style>
 </head>
 <body>
@@ -1314,18 +1386,6 @@
                         <span class="nav-tech-tag">FFI</span>
                         <span class="nav-tech-tag">ONNX</span>
                         <span class="nav-tech-tag">OpenCV</span>
-                    </div>
-                </div>
-
-                <!-- Technical Implementation Demo -->
-                <div class="project-nav-item demo-extension" onclick="showProject('flutter-face-kit')">
-                    <div class="demo-header">
-                        <span class="demo-label">📦 Demo Project</span>
-                    </div>
-                    <h3 class="nav-project-title demo-title">Flutter Face Kit SDK</h3>
-                    <div class="demo-github">
-                        <span class="github-icon">⭐</span>
-                        <span class="github-text">github.com/robert008/flutter_face_kit</span>
                     </div>
                 </div>
 
@@ -1435,6 +1495,43 @@
                 </div>
 
             </nav>
+
+            <!-- Flutter FFI SDK - pub.dev Packages -->
+            <div class="github-section">
+                <h3 class="github-title">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    Github Repo
+                </h3>
+                <div class="github-grid">
+                    <div class="github-item" onclick="showProject('flutter-face-kit')">
+                        <div class="github-item-title">flutter_face_kit</div>
+                        <div class="github-item-desc">Face Recognition SDK</div>
+                        <span class="github-item-tag">Face Recognition</span>
+                    </div>
+                    <div class="github-item" onclick="showProject('sdk-doclayout')">
+                        <div class="github-item-title">flutter_doclayout_kit</div>
+                        <div class="github-item-desc">Document Layout Detection (23 types)</div>
+                        <span class="github-item-tag">Document AI</span>
+                    </div>
+                    <div class="github-item" onclick="showProject('sdk-ocr')">
+                        <div class="github-item-title">flutter_ocr_kit</div>
+                        <div class="github-item-desc">Edge AI OCR + Layout Analysis</div>
+                        <span class="github-item-tag">Document AI</span>
+                    </div>
+                    <div class="github-item" onclick="showProject('sdk-capture')">
+                        <div class="github-item-title">flutter_document_capture</div>
+                        <div class="github-item-desc">Document Capture Preprocessing</div>
+                        <span class="github-item-tag">Document AI</span>
+                    </div>
+                    <div class="github-item" onclick="showProject('sdk-yolo')">
+                        <div class="github-item-title">flutter_yolo_open_kit</div>
+                        <div class="github-item-desc">Commercial-free Object Detection</div>
+                        <span class="github-item-tag">Object Detection</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Right Content Area 70% -->
@@ -1450,7 +1547,7 @@
                         
                         <div class="welcome-stats">
                             <div class="stat-item">
-                                <div class="stat-number">16</div>
+                                <div class="stat-number">10+</div>
                                 <div class="stat-label">Years Experience</div>
                             </div>
                             <div class="stat-divider"></div>
@@ -1460,21 +1557,13 @@
                             </div>
                             <div class="stat-divider"></div>
                             <div class="stat-item">
-                                <div class="stat-number">3</div>
-                                <div class="stat-label">Core Platforms</div>
+                                <div class="stat-number">5</div>
+                                <div class="stat-label">Github Repo</div>
                             </div>
                         </div>
-                        
-                        <div class="welcome-content">
-                            <p class="welcome-description">
-                                From <strong>AI Technology Integration</strong> to <strong>Enterprise System Development</strong>,<br>
-                                From <strong>Cross-platform Architecture Design</strong> to <strong>Emergency Technical Rescue</strong>
-                            </p>
-                        </div>
-                        
+
                         <div class="welcome-action">
                             <div class="action-button" onclick="showProject('flagship')">
-                                <span class="action-icon">🚀</span>
                                 <span class="action-text">Explore Flagship Project</span>
                                 <span class="action-arrow">→</span>
                             </div>
@@ -3515,7 +3604,7 @@
                         <div class="detail-content">
                             <div class="comparison-grid">
                                 <div class="comparison-item">
-                                    <h5 class="comparison-title">🚀 Flagship Project</h5>
+                                    <h5 class="comparison-title">Flagship Project</h5>
                                     <ul>
                                         <li>AI Migration + Recognition capability</li>
                                         <li>Server-to-mobile architecture</li>
@@ -3524,7 +3613,7 @@
                                 </div>
                                 <div class="comparison-arrow">→</div>
                                 <div class="comparison-item">
-                                    <h5 class="comparison-title">📦 This Demo</h5>
+                                    <h5 class="comparison-title">This Demo</h5>
                                     <ul>
                                         <li><strong>Complete workflow + Registration</strong></li>
                                         <li>Full package implementation</li>
@@ -3536,30 +3625,13 @@
                     </div>
 
                     <div class="detail-section">
-                        <h4 class="detail-title">GitHub Repository & Live Code</h4>
+                        <h4 class="detail-title">Available on github</h4>
                         <div class="detail-content">
                             <div class="github-cta">
                                 <div class="github-main">
-                                    <h3>📦 Download & Run Immediately</h3>
                                     <a href="https://github.com/robert008/flutter_face_kit" target="_blank" class="github-primary-link">
                                         github.com/robert008/flutter_face_kit
                                     </a>
-                                    <p class="github-tagline">Complete implementation, documentation, and examples ready to use</p>
-                                </div>
-                                
-                                <div class="github-quick-info">
-                                    <div class="quick-stat">
-                                        <span class="stat-icon">🔧</span>
-                                        <span class="stat-text">Ready-to-use SDK</span>
-                                    </div>
-                                    <div class="quick-stat">
-                                        <span class="stat-icon">📱</span>
-                                        <span class="stat-text">iOS + Android</span>
-                                    </div>
-                                    <div class="quick-stat">
-                                        <span class="stat-icon">🔬</span>
-                                        <span class="stat-text">Demo Project</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -3610,6 +3682,234 @@
                                             Your browser does not support video playback
                                         </video>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SDK: flutter_doclayout_kit Content -->
+                <div id="sdk-doclayout-content" class="content-details">
+                    <div class="content-header">
+                        <h1 class="content-title">flutter_doclayout_kit</h1>
+                        <p class="content-subtitle">Document Layout Detection | Flutter FFI Plugin | pub.dev Package</p>
+                        <div class="content-description">
+                            On-device document layout analysis using PP-DocLayout model. Detects <strong>23 document element types</strong> including paragraphs, tables, figures, headers, footers, and more. No internet required.
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Key Features</h4>
+                        <div class="detail-content">
+                            <div class="comparison-grid">
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">Detection Capabilities</h5>
+                                    <ul>
+                                        <li>23 document element types</li>
+                                        <li>Tables, figures, text blocks</li>
+                                        <li>Headers, footers, titles</li>
+                                        <li>Formulas, stamps, watermarks</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-arrow">+</div>
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">Technical Stack</h5>
+                                    <ul>
+                                        <li>ONNX Runtime native implementation</li>
+                                        <li>C++ FFI integration</li>
+                                        <li>iOS Static Library / Android NDK</li>
+                                        <li>Offline processing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Available on github/pub.dev</h4>
+                        <div class="detail-content">
+                            <div class="github-cta">
+                                <div class="github-main">
+                                    <a href="https://github.com/robert008/flutter_doclayout_kit" target="_blank" class="github-primary-link">
+                                        github.com/robert008/flutter_doclayout_kit
+                                    </a>
+                                    <a href="https://pub.dev/packages/flutter_doclayout_kit" target="_blank" class="github-primary-link">
+                                        pub.dev/packages/flutter_doclayout_kit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SDK: flutter_ocr_kit Content -->
+                <div id="sdk-ocr-content" class="content-details">
+                    <div class="content-header">
+                        <h1 class="content-title">flutter_ocr_kit</h1>
+                        <p class="content-subtitle">Edge AI OCR | Layout Analysis | Flutter FFI Plugin</p>
+                        <div class="content-description">
+                            Comprehensive OCR solution combining native OCR engines (Apple Vision / Google ML Kit) with <strong>ONNX-based document layout analysis</strong>. All processing occurs locally without internet dependency.
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Key Features</h4>
+                        <div class="detail-content">
+                            <div class="comparison-grid">
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">OCR Capabilities</h5>
+                                    <ul>
+                                        <li>Apple Vision (iOS)</li>
+                                        <li>Google ML Kit (Android)</li>
+                                        <li>Layout-aware text extraction</li>
+                                        <li>Table structure recognition</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-arrow">+</div>
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">Use Cases</h5>
+                                    <ul>
+                                        <li>Real-time text search</li>
+                                        <li>Key Information Extraction (KIE)</li>
+                                        <li>Invoice/receipt scanning</li>
+                                        <li>Quotation/delivery note parsing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Available on github/pub.dev</h4>
+                        <div class="detail-content">
+                            <div class="github-cta">
+                                <div class="github-main">
+                                    <a href="https://github.com/robert008/flutter_ocr_kit" target="_blank" class="github-primary-link">
+                                        github.com/robert008/flutter_ocr_kit
+                                    </a>
+                                    <a href="https://pub.dev/packages/flutter_ocr_kit" target="_blank" class="github-primary-link">
+                                        pub.dev/packages/flutter_ocr_kit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SDK: flutter_document_capture Content -->
+                <div id="sdk-capture-content" class="content-details">
+                    <div class="content-header">
+                        <h1 class="content-title">flutter_document_capture</h1>
+                        <p class="content-subtitle">Document Capture Preprocessing | OpenCV | Flutter FFI Plugin</p>
+                        <div class="content-description">
+                            Real-time document capture preprocessing using OpenCV. Provides <strong>edge detection, quality assessment, perspective correction, and image enhancement</strong> to optimize input quality for OCR and layout detection.
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Key Features</h4>
+                        <div class="detail-content">
+                            <div class="comparison-grid">
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">Capture Features</h5>
+                                    <ul>
+                                        <li>Canny edge detection</li>
+                                        <li>Corner detection & contour finding</li>
+                                        <li>Perspective correction</li>
+                                        <li>Auto-capture when quality passes</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-arrow">+</div>
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">Quality Assessment</h5>
+                                    <ul>
+                                        <li>Blur detection scoring</li>
+                                        <li>Brightness evaluation</li>
+                                        <li>Stability scoring</li>
+                                        <li>Multi-frame buffering</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Available on github/pub.dev</h4>
+                        <div class="detail-content">
+                            <div class="github-cta">
+                                <div class="github-main">
+                                    <a href="https://github.com/robert008/flutter_document_capture" target="_blank" class="github-primary-link">
+                                        github.com/robert008/flutter_document_capture
+                                    </a>
+                                    <a href="https://pub.dev/packages/flutter_document_capture" target="_blank" class="github-primary-link">
+                                        pub.dev/packages/flutter_document_capture
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SDK: flutter_yolo_open_kit Content -->
+                <div id="sdk-yolo-content" class="content-details">
+                    <div class="content-header">
+                        <h1 class="content-title">flutter_yolo_open_kit</h1>
+                        <p class="content-subtitle">Commercial-Free Object Detection | YOLOX & PP-YOLOE+ | Flutter FFI Plugin</p>
+                        <div class="content-description">
+                            <strong>Commercial-friendly</strong> object detection plugin using YOLOX and PP-YOLOE+ models. Unlike other Flutter YOLO packages that require licensing fees, this SDK is completely free for commercial use.
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Key Differentiator</h4>
+                        <div class="detail-content">
+                            <div class="comparison-grid">
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">Other YOLO Packages</h5>
+                                    <ul>
+                                        <li>Require commercial license</li>
+                                        <li>Per-app or per-seat pricing</li>
+                                        <li>Limited model choices</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-arrow">vs</div>
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">This SDK</h5>
+                                    <ul>
+                                        <li><strong>100% Commercial-free</strong></li>
+                                        <li>Apache 2.0 License</li>
+                                        <li>Multiple model sizes (S/M/L)</li>
+                                        <li>YOLOX + PP-YOLOE+ support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Supported Models</h4>
+                        <div class="detail-content">
+                            <ul>
+                                <li><strong>PP-YOLOE+ S</strong> (30MB) - Fastest, real-time detection</li>
+                                <li><strong>PP-YOLOE+ M</strong> (90MB) - Balanced performance</li>
+                                <li><strong>PP-YOLOE+ L</strong> (200MB) - Most accurate</li>
+                                <li><strong>YOLOX-M</strong> (97MB) - Medium variant</li>
+                                <li><strong>YOLOX-L</strong> (207MB) - Large variant</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Available on github/pub.dev</h4>
+                        <div class="detail-content">
+                            <div class="github-cta">
+                                <div class="github-main">
+                                    <a href="https://github.com/robert008/flutter_yolo_open_kit" target="_blank" class="github-primary-link">
+                                        github.com/robert008/flutter_yolo_open_kit
+                                    </a>
+                                    <a href="https://pub.dev/packages/flutter_yolo_open_kit" target="_blank" class="github-primary-link">
+                                        pub.dev/packages/flutter_yolo_open_kit
+                                    </a>
                                 </div>
                             </div>
                         </div>
