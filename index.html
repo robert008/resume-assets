@@ -854,6 +854,115 @@
                 transform: translateY(0);
             }
         }
+
+        /* Flutter FFI SDK - pub.dev Packages */
+        .github-section {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .github-title {
+            font-size: 1.1em;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .github-title svg {
+            width: 20px;
+            height: 20px;
+            fill: #ffffff;
+        }
+
+        .github-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .github-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 12px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .github-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-color: rgba(52, 152, 219, 0.5);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .github-item-title {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #3498db;
+            margin-bottom: 4px;
+        }
+
+        .github-item-desc {
+            font-size: 0.78em;
+            color: #bdc3c7;
+            line-height: 1.3;
+        }
+
+        .github-item-tag {
+            display: inline-block;
+            background: rgba(52, 152, 219, 0.2);
+            color: #3498db;
+            font-size: 0.68em;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-top: 6px;
+        }
+
+        /* GitHub CTA Styling */
+        .github-cta {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid #333;
+            text-align: center;
+        }
+
+        .github-main h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .github-primary-link {
+            font-family: 'Monaco', 'Menlo', monospace;
+            color: #0366d6;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            display: block;
+            margin: 15px 0;
+            padding: 12px 20px;
+            background: #f6f8fa;
+            border-radius: 8px;
+            border: 2px solid #0366d6;
+            transition: all 0.3s ease;
+        }
+
+        .github-primary-link:hover {
+            background: #0366d6;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(3, 102, 214, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -989,6 +1098,38 @@
                 </div>
 
             </nav>
+
+            <!-- Flutter FFI SDK - pub.dev Packages -->
+            <div class="github-section">
+                <h3 class="github-title">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    Github Repo
+                </h3>
+                <div class="github-grid">
+                    <div class="github-item" onclick="showProject('sdk-doclayout')">
+                        <div class="github-item-title">flutter_doclayout_kit</div>
+                        <div class="github-item-desc">文件版面偵測 (23種類型)</div>
+                        <span class="github-item-tag">Document AI</span>
+                    </div>
+                    <div class="github-item" onclick="showProject('sdk-ocr')">
+                        <div class="github-item-title">flutter_ocr_kit</div>
+                        <div class="github-item-desc">Edge AI OCR + 版面分析</div>
+                        <span class="github-item-tag">Document AI</span>
+                    </div>
+                    <div class="github-item" onclick="showProject('sdk-capture')">
+                        <div class="github-item-title">flutter_document_capture</div>
+                        <div class="github-item-desc">文件擷取前處理</div>
+                        <span class="github-item-tag">Document AI</span>
+                    </div>
+                    <div class="github-item" onclick="showProject('sdk-yolo')">
+                        <div class="github-item-title">flutter_yolo_open_kit</div>
+                        <div class="github-item-desc">商用免費物件偵測</div>
+                        <span class="github-item-tag">Object Detection</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- 右側內容區 70% -->
@@ -1004,7 +1145,7 @@
                         
                         <div class="welcome-stats">
                             <div class="stat-item">
-                                <div class="stat-number">16</div>
+                                <div class="stat-number">10+</div>
                                 <div class="stat-label">年開發經驗</div>
                             </div>
                             <div class="stat-divider"></div>
@@ -1014,21 +1155,13 @@
                             </div>
                             <div class="stat-divider"></div>
                             <div class="stat-item">
-                                <div class="stat-number">3</div>
-                                <div class="stat-label">核心平台</div>
+                                <div class="stat-number">5</div>
+                                <div class="stat-label">Github Repo</div>
                             </div>
-                        </div>
-                        
-                        <div class="welcome-content">
-                            <p class="welcome-description">
-                                從 <strong>AI 技術整合</strong> 到 <strong>企業級系統開發</strong>，<br>
-                                從 <strong>跨平台架構設計</strong> 到 <strong>緊急技術救援</strong>
-                            </p>
                         </div>
                         
                         <div class="welcome-action">
                             <div class="action-button" onclick="showProject('flagship')">
-                                <span class="action-icon">🚀</span>
                                 <span class="action-text">開始探索旗艦級專案</span>
                                 <span class="action-arrow">→</span>
                             </div>
@@ -3098,6 +3231,283 @@
                                             您的瀏覽器不支援影片播放
                                         </video>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flutter Face Kit SDK 內容 -->
+                <div id="flutter-face-kit-content" class="content-details">
+                    <div class="content-header">
+                        <h1 class="content-title">Flutter Face Kit SDK</h1>
+                        <p class="content-subtitle">技術展示專案 | 完整人臉辨識方案</p>
+                        <div class="content-description">
+                            基於旗艦 AI 移植專案的技術延伸，實現完整的人臉辨識流程：<strong>註冊 + 辨識 = 完整方案</strong>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">核心差異</h4>
+                        <div class="detail-content">
+                            <div class="comparison-grid">
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">旗艦專案</h5>
+                                    <ul>
+                                        <li>AI 移植 + 辨識能力</li>
+                                        <li>Server 轉移動端架構</li>
+                                        <li>企業部署導向</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-arrow">→</div>
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">此展示專案</h5>
+                                    <ul>
+                                        <li><strong>完整流程 + 註冊功能</strong></li>
+                                        <li>完整套件實作</li>
+                                        <li>開發者 SDK 導向</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Available on github</h4>
+                        <div class="detail-content">
+                            <div class="github-cta">
+                                <div class="github-main">
+                                    <a href="https://github.com/robert008/flutter_face_kit" target="_blank" class="github-primary-link">
+                                        github.com/robert008/flutter_face_kit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SDK: flutter_doclayout_kit 內容 -->
+                <div id="sdk-doclayout-content" class="content-details">
+                    <div class="content-header">
+                        <h1 class="content-title">flutter_doclayout_kit</h1>
+                        <p class="content-subtitle">文件版面偵測 | Flutter FFI Plugin | pub.dev Package</p>
+                        <div class="content-description">
+                            使用 PP-DocLayout 模型進行裝置端文件版面分析。可偵測 <strong>23 種文件元素類型</strong>，包括段落、表格、圖片、頁首、頁尾等。無需網路連線。
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">核心功能</h4>
+                        <div class="detail-content">
+                            <div class="comparison-grid">
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">偵測能力</h5>
+                                    <ul>
+                                        <li>23 種文件元素類型</li>
+                                        <li>表格、圖片、文字區塊</li>
+                                        <li>頁首、頁尾、標題</li>
+                                        <li>公式、印章、浮水印</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-arrow">+</div>
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">技術架構</h5>
+                                    <ul>
+                                        <li>ONNX Runtime 原生實作</li>
+                                        <li>C++ FFI 整合</li>
+                                        <li>iOS Static Library / Android NDK</li>
+                                        <li>離線處理</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Available on github/pub.dev</h4>
+                        <div class="detail-content">
+                            <div class="github-cta">
+                                <div class="github-main">
+                                    <a href="https://github.com/robert008/flutter_doclayout_kit" target="_blank" class="github-primary-link">
+                                        github.com/robert008/flutter_doclayout_kit
+                                    </a>
+                                    <a href="https://pub.dev/packages/flutter_doclayout_kit" target="_blank" class="github-primary-link">
+                                        pub.dev/packages/flutter_doclayout_kit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SDK: flutter_ocr_kit 內容 -->
+                <div id="sdk-ocr-content" class="content-details">
+                    <div class="content-header">
+                        <h1 class="content-title">flutter_ocr_kit</h1>
+                        <p class="content-subtitle">Edge AI OCR | 版面分析 | Flutter FFI Plugin</p>
+                        <div class="content-description">
+                            結合原生 OCR 引擎 (Apple Vision / Google ML Kit) 與 <strong>ONNX 文件版面分析</strong> 的完整 OCR 方案。所有處理皆在本地進行，無需網路連線。
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">核心功能</h4>
+                        <div class="detail-content">
+                            <div class="comparison-grid">
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">OCR 能力</h5>
+                                    <ul>
+                                        <li>Apple Vision (iOS)</li>
+                                        <li>Google ML Kit (Android)</li>
+                                        <li>版面感知文字擷取</li>
+                                        <li>表格結構識別</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-arrow">+</div>
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">應用場景</h5>
+                                    <ul>
+                                        <li>即時文字搜尋</li>
+                                        <li>關鍵資訊擷取 (KIE)</li>
+                                        <li>發票/收據掃描</li>
+                                        <li>報價單/送貨單解析</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Available on github/pub.dev</h4>
+                        <div class="detail-content">
+                            <div class="github-cta">
+                                <div class="github-main">
+                                    <a href="https://github.com/robert008/flutter_ocr_kit" target="_blank" class="github-primary-link">
+                                        github.com/robert008/flutter_ocr_kit
+                                    </a>
+                                    <a href="https://pub.dev/packages/flutter_ocr_kit" target="_blank" class="github-primary-link">
+                                        pub.dev/packages/flutter_ocr_kit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SDK: flutter_document_capture 內容 -->
+                <div id="sdk-capture-content" class="content-details">
+                    <div class="content-header">
+                        <h1 class="content-title">flutter_document_capture</h1>
+                        <p class="content-subtitle">文件擷取前處理 | OpenCV | Flutter FFI Plugin</p>
+                        <div class="content-description">
+                            使用 OpenCV 進行即時文件擷取前處理。提供 <strong>邊緣偵測、品質評估、透視校正、影像增強</strong>，優化 OCR 和版面偵測的輸入品質。
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">核心功能</h4>
+                        <div class="detail-content">
+                            <div class="comparison-grid">
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">擷取功能</h5>
+                                    <ul>
+                                        <li>Canny 邊緣偵測</li>
+                                        <li>角點偵測與輪廓尋找</li>
+                                        <li>透視校正</li>
+                                        <li>品質通過時自動擷取</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-arrow">+</div>
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">品質評估</h5>
+                                    <ul>
+                                        <li>模糊偵測評分</li>
+                                        <li>亮度評估</li>
+                                        <li>穩定度評分</li>
+                                        <li>多幀緩衝</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Available on github/pub.dev</h4>
+                        <div class="detail-content">
+                            <div class="github-cta">
+                                <div class="github-main">
+                                    <a href="https://github.com/robert008/flutter_document_capture" target="_blank" class="github-primary-link">
+                                        github.com/robert008/flutter_document_capture
+                                    </a>
+                                    <a href="https://pub.dev/packages/flutter_document_capture" target="_blank" class="github-primary-link">
+                                        pub.dev/packages/flutter_document_capture
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SDK: flutter_yolo_open_kit 內容 -->
+                <div id="sdk-yolo-content" class="content-details">
+                    <div class="content-header">
+                        <h1 class="content-title">flutter_yolo_open_kit</h1>
+                        <p class="content-subtitle">商用免費物件偵測 | YOLOX & PP-YOLOE+ | Flutter FFI Plugin</p>
+                        <div class="content-description">
+                            使用 YOLOX 和 PP-YOLOE+ 模型的<strong>商用友善</strong>物件偵測套件。與其他需要授權費用的 Flutter YOLO 套件不同，此 SDK 完全免費供商業使用。
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">核心差異</h4>
+                        <div class="detail-content">
+                            <div class="comparison-grid">
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">其他 YOLO 套件</h5>
+                                    <ul>
+                                        <li>需要商業授權</li>
+                                        <li>按 App 或按席位計費</li>
+                                        <li>有限的模型選擇</li>
+                                    </ul>
+                                </div>
+                                <div class="comparison-arrow">vs</div>
+                                <div class="comparison-item">
+                                    <h5 class="comparison-title">此 SDK</h5>
+                                    <ul>
+                                        <li><strong>100% 商用免費</strong></li>
+                                        <li>Apache 2.0 授權</li>
+                                        <li>多種模型尺寸 (S/M/L)</li>
+                                        <li>YOLOX + PP-YOLOE+ 支援</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">支援模型</h4>
+                        <div class="detail-content">
+                            <ul>
+                                <li><strong>PP-YOLOE+ S</strong> (30MB) - 最快，即時偵測</li>
+                                <li><strong>PP-YOLOE+ M</strong> (90MB) - 平衡效能</li>
+                                <li><strong>PP-YOLOE+ L</strong> (200MB) - 最準確</li>
+                                <li><strong>YOLOX-M</strong> (97MB) - 中型變體</li>
+                                <li><strong>YOLOX-L</strong> (207MB) - 大型變體</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4 class="detail-title">Available on github/pub.dev</h4>
+                        <div class="detail-content">
+                            <div class="github-cta">
+                                <div class="github-main">
+                                    <a href="https://github.com/robert008/flutter_yolo_open_kit" target="_blank" class="github-primary-link">
+                                        github.com/robert008/flutter_yolo_open_kit
+                                    </a>
+                                    <a href="https://pub.dev/packages/flutter_yolo_open_kit" target="_blank" class="github-primary-link">
+                                        pub.dev/packages/flutter_yolo_open_kit
+                                    </a>
                                 </div>
                             </div>
                         </div>
