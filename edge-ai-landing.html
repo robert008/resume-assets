@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter Edge AI SDK | On-Device AI Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #ffffff;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eaeaea;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .nav-logo span {
+            color: #0066ff;
+        }
+
+        .nav-contact {
+            padding: 10px 24px;
+            background: #0066ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95em;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .nav-contact:hover {
+            background: #0052cc;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 40px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #f0f7ff;
+            color: #0066ff;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 3.2em;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-title span {
+            color: #0066ff;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25em;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Pain Points Section */
+        .pain-section {
+            padding: 60px 40px;
+            background: #f8f9fa;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2em;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #1a1a2e;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 48px;
+            font-size: 1.1em;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .pain-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid #eaeaea;
+        }
+
+        .pain-icon {
+            width: 48px;
+            height: 48px;
+            background: #fff0f0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .pain-card h3 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+        }
+
+        .pain-card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 80px 40px;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .solution-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 32px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .solution-card:hover {
+            border-color: #0066ff;
+            transform: translateY(-4px);
+        }
+
+        .solution-icon {
+            width: 48px;
+            height: 48px;
+            background: #e8f4ff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .solution-card h3 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+        }
+
+        .solution-card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Product Tabs Section */
+        .products-section {
+            padding: 80px 40px;
+            background: #f8f9fa;
+        }
+
+        .tabs-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .tab-card {
+            background: white;
+            border: 2px solid #eaeaea;
+            border-radius: 16px;
+            padding: 32px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .tab-card:hover {
+            border-color: #0066ff;
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0, 102, 255, 0.15);
+        }
+
+        .tab-card.active {
+            border-color: #0066ff;
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            box-shadow: 0 8px 30px rgba(0, 102, 255, 0.12);
+        }
+
+        .tab-card-icon {
+            width: 64px;
+            height: 64px;
+            background: #f0f7ff;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8em;
+            transition: all 0.3s;
+        }
+
+        .tab-card.active .tab-card-icon {
+            background: #0066ff;
+            color: white;
+        }
+
+        .tab-card-title {
+            font-size: 1.25em;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+
+        .tab-card-desc {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .tab-card.active .tab-card-title {
+            color: #0066ff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 48px;
+            align-items: flex-start;
+        }
+
+        .product-video {
+            position: sticky;
+            top: 100px;
+        }
+
+        .product-video video {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-video-placeholder {
+            width: 100%;
+            max-width: 280px;
+            aspect-ratio: 9/16;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .product-info h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1a2e;
+        }
+
+        .product-info .product-tagline {
+            font-size: 1.1em;
+            color: #0066ff;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .product-features li {
+            padding: 10px 0;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .product-features li::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: #e8f4ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .product-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .product-link {
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 0.95em;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .product-link.primary {
+            background: #0066ff;
+            color: white;
+        }
+
+        .product-link.primary:hover {
+            background: #0052cc;
+        }
+
+        .product-link.secondary {
+            background: #f0f0f0;
+            color: #1a1a2e;
+        }
+
+        .product-link.secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .product-visual {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .product-visual h4 {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .use-cases {
+            display: grid;
+            gap: 16px;
+        }
+
+        .use-case {
+            padding: 16px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 0.95em;
+            color: #444;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1a2e;
+        }
+
+        .cta-subtitle {
+            color: #666;
+            margin-bottom: 32px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .cta-btn {
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .cta-btn.primary {
+            background: #0066ff;
+            color: white;
+        }
+
+        .cta-btn.primary:hover {
+            background: #0052cc;
+        }
+
+        .cta-btn.secondary {
+            background: #f0f0f0;
+            color: #1a1a2e;
+        }
+
+        .cta-btn.secondary:hover {
+            background: #e0e0e0;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px;
+            border-top: 1px solid #eaeaea;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #0066ff;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-title {
+                font-size: 2.4em;
+            }
+
+            .pain-grid,
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-layout {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .product-video {
+                position: relative;
+                top: 0;
+                display: flex;
+                justify-content: center;
+            }
+
+            .product-video video,
+            .product-video-placeholder {
+                max-width: 200px;
+            }
+
+            .product-info {
+                text-align: left;
+            }
+
+            .tabs-container {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">Flutter <span>Edge AI</span></div>
+            <a href="mailto:figo007007@gmail.com" class="nav-contact">Contact for Partnership</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">On-Device AI for Mobile</div>
+        <h1 class="hero-title">
+            AI That Runs <span>Offline</span>,<br>
+            On Any Device
+        </h1>
+        <p class="hero-subtitle">
+            Production-ready Flutter SDKs for face recognition, document processing, and object detection. No cloud dependency. No licensing fees.
+        </p>
+    </section>
+    <!-- Solution -->
+    <section class="solution-section">
+        <div class="section-container">
+            <h2 class="section-title">Edge AI: A Better Approach</h2>
+            <p class="section-subtitle">All processing happens on-device</p>
+
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">0</div>
+                    <h3>Zero Cloud Costs</h3>
+                    <p>No API calls, no per-request fees. One-time integration, unlimited usage.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">W</div>
+                    <h3>Works Offline</h3>
+                    <p>Full functionality without internet. Perfect for field work, secure facilities, or unreliable networks.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">L</div>
+                    <h3>Data Stays Local</h3>
+                    <p>Sensitive information never leaves the device. GDPR-friendly by design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Lines -->
+    <section class="products-section">
+        <div class="section-container">
+            <h2 class="section-title">Three Product Lines</h2>
+            <p class="section-subtitle">Production-ready SDKs for different use cases</p>
+
+            <div class="tabs-container">
+                <div class="tab-card active" onclick="showTab('face')">
+                    <div class="tab-card-icon">F</div>
+                    <div class="tab-card-title">Face Recognition</div>
+                    <div class="tab-card-desc">On-device face registration and matching in ~500ms</div>
+                </div>
+                <div class="tab-card" onclick="showTab('document')">
+                    <div class="tab-card-icon">D</div>
+                    <div class="tab-card-title">Document AI</div>
+                    <div class="tab-card-desc">Capture, layout detection, and OCR pipeline</div>
+                </div>
+                <div class="tab-card" onclick="showTab('detection')">
+                    <div class="tab-card-icon">O</div>
+                    <div class="tab-card-title">Object Detection</div>
+                    <div class="tab-card-desc">Commercial-free YOLO models for mobile</div>
+                </div>
+            </div>
+
+            <!-- Face Recognition Tab -->
+            <div id="face-tab" class="tab-content active">
+                <div class="product-layout">
+                    <div class="product-video">
+                        <video autoplay muted loop playsinline>
+                            <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/face-kit-demo/demo.MOV" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="product-info">
+                        <h2>Face Recognition SDK</h2>
+                        <p class="product-tagline">Register + Recognize in ~500ms</p>
+                        <p>
+                            Complete face recognition solution running entirely on-device.
+                            Migrated from server-grade AI models to mobile with no accuracy loss.
+                            Supports both iOS and Android through Flutter FFI.
+                        </p>
+                        <ul class="product-features">
+                            <li>Face registration and recognition workflow</li>
+                            <li>~500ms processing time per face</li>
+                            <li>Works completely offline</li>
+                            <li>C++ core with Flutter plugin wrapper</li>
+                        </ul>
+                        <div class="product-visual">
+                            <h4>Use Cases</h4>
+                            <div class="use-cases">
+                                <div class="use-case">Employee attendance systems</div>
+                                <div class="use-case">Access control / security</div>
+                                <div class="use-case">Identity verification</div>
+                                <div class="use-case">VIP customer recognition</div>
+                            </div>
+                        </div>
+                        <div class="product-links">
+                            <a href="https://github.com/robert008/flutter_face_kit" target="_blank" class="product-link primary">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document AI Tab -->
+            <div id="document-tab" class="tab-content">
+                <div class="product-layout">
+                    <div class="product-video">
+                        <div class="product-video-placeholder">Demo Coming Soon</div>
+                    </div>
+                    <div class="product-info">
+                        <h2>Document AI Pipeline</h2>
+                        <p class="product-tagline">Capture → Layout → OCR</p>
+                        <p>
+                            Complete document processing pipeline: quality-aware capture,
+                            23-type layout detection, and native OCR. Three SDKs that work
+                            together or independently.
+                        </p>
+                        <ul class="product-features">
+                            <li>Auto-capture with quality scoring</li>
+                            <li>23 document element types detection</li>
+                            <li>Native OCR (Apple Vision / Google ML Kit)</li>
+                            <li>Table structure recognition</li>
+                        </ul>
+                        <div class="product-visual">
+                            <h4>Use Cases</h4>
+                            <div class="use-cases">
+                                <div class="use-case">Invoice / receipt scanning</div>
+                                <div class="use-case">ID card processing</div>
+                                <div class="use-case">Form digitization</div>
+                                <div class="use-case">Document archiving</div>
+                            </div>
+                        </div>
+                        <div class="product-links">
+                            <a href="https://pub.dev/packages/flutter_document_capture" target="_blank" class="product-link primary">Capture SDK</a>
+                            <a href="https://pub.dev/packages/flutter_doclayout_kit" target="_blank" class="product-link secondary">Layout SDK</a>
+                            <a href="https://pub.dev/packages/flutter_ocr_kit" target="_blank" class="product-link secondary">OCR SDK</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Object Detection Tab -->
+            <div id="detection-tab" class="tab-content">
+                <div class="product-layout">
+                    <div class="product-video">
+                        <video autoplay muted loop playsinline>
+                            <source src="https://github.com/robert008/flutter_yolo_open_kit/releases/download/v1.0.0/yolo_demo.mov" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="product-info">
+                        <h2>Object Detection SDK</h2>
+                        <p class="product-tagline">100% Commercial-Free</p>
+                        <p>
+                            YOLOX and PP-YOLOE+ models with Apache 2.0 license.
+                            Unlike other Flutter YOLO packages, completely free for
+                            commercial use with no licensing fees.
+                        </p>
+                        <ul class="product-features">
+                            <li>Multiple model sizes (S/M/L)</li>
+                            <li>Real-time camera detection</li>
+                            <li>Core ML (iOS) + NNAPI (Android) acceleration</li>
+                            <li>Apache 2.0 - no commercial restrictions</li>
+                        </ul>
+                        <div class="product-visual">
+                            <h4>Use Cases</h4>
+                            <div class="use-cases">
+                                <div class="use-case">Inventory counting</div>
+                                <div class="use-case">Quality inspection</div>
+                                <div class="use-case">Safety monitoring</div>
+                                <div class="use-case">Retail analytics</div>
+                            </div>
+                        </div>
+                        <div class="product-links">
+                            <a href="https://pub.dev/packages/flutter_yolo_open_kit" target="_blank" class="product-link primary">View on pub.dev</a>
+                            <a href="https://github.com/robert008/flutter_yolo_open_kit" target="_blank" class="product-link secondary">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="section-container">
+            <h2 class="cta-title">Looking for a Technical Co-founder?</h2>
+            <p class="cta-subtitle">
+                I'm seeking business partners to bring these Edge AI solutions to market.<br>
+                SaaS, custom integration, or licensing - let's explore together.
+            </p>
+            <div class="cta-buttons">
+                <a href="mailto:figo007007@gmail.com" class="cta-btn primary">Get in Touch</a>
+                <a href="https://github.com/robert008" target="_blank" class="cta-btn secondary">View All Repos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            Built by <a href="https://www.linkedin.com/in/robert-chuang-88090932b" target="_blank">Robert Chuang</a> |
+            <a href="mailto:figo007007@gmail.com">figo007007@gmail.com</a>
+        </p>
+    </footer>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Remove active from all cards
+            document.querySelectorAll('.tab-card').forEach(card => {
+                card.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+
+            // Activate clicked card
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
