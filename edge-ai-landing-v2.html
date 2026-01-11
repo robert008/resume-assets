@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge AI Foundry | 高效能邊緣 AI 解決方案</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --primary: #7c3aed;
+            --primary-light: #a78bfa;
+            --secondary: #14b8a6;
+            --bg: #faf9fb;
+            --bg-card: #ffffff;
+            --text: #1f2937;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(250, 249, 251, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 16px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            padding: 10px 24px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95em;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: #6d28d9;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding: 120px 40px 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Expanding Circle Backdrop */
+        .hero-backdrop {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200vmax;
+            height: 200vmax;
+            transform: translate(-50%, -50%) scale(0.15);
+            border-radius: 50%;
+            background: linear-gradient(
+                180deg,
+                #7c3aed 0%,
+                #6d28d9 30%,
+                #4c1d95 60%,
+                #1e1b4b 100%
+            );
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero > *:not(.hero-backdrop) {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(124, 58, 237, 0.1);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 4em;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 24px;
+            line-height: 1.1;
+            max-width: 900px;
+        }
+
+        .hero-title span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3em;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .hero-cta:hover {
+            background: #6d28d9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .hero-image-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-image-container video {
+            width: 100%;
+            display: block;
+            border-radius: 20px;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .hero-slide-1 {
+            position: relative;
+            opacity: 1;
+        }
+
+        .hero-slide-2,
+        .hero-slide-3 {
+            opacity: 0;
+        }
+
+        /* Hero Visual Wrapper */
+        .hero-visual-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .hero-visual {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        /* Hero Cards */
+        .hero-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .hero-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(30px);
+            min-width: 280px;
+        }
+
+        .hero-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(124, 58, 237, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .hero-card-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: #7c3aed;
+        }
+
+        .hero-card-content h4 {
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .hero-card-content p {
+            font-size: 0.85em;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Floating Elements for GSAP */
+        .floating-card {
+            position: absolute;
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+        }
+
+        .floating-card-1 {
+            top: 10%;
+            left: -80px;
+            width: 180px;
+        }
+
+        .floating-card-2 {
+            top: 30%;
+            right: -80px;
+            width: 200px;
+        }
+
+        .floating-card-3 {
+            bottom: 10%;
+            left: -60px;
+            width: 160px;
+        }
+
+        .floating-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .floating-icon.purple { background: rgba(124, 58, 237, 0.1); }
+        .floating-icon.teal { background: rgba(20, 184, 166, 0.1); }
+        .floating-icon.pink { background: rgba(236, 72, 153, 0.1); }
+
+        .floating-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .floating-card h4 {
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .floating-card p {
+            font-size: 0.8em;
+            color: var(--text-muted);
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 100px 40px;
+            background: white;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(20, 184, 166, 0.1);
+            color: var(--secondary);
+            border-radius: 50px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1em;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon.purple { background: rgba(124, 58, 237, 0.1); }
+        .feature-icon.teal { background: rgba(20, 184, 166, 0.1); }
+        .feature-icon.pink { background: rgba(236, 72, 153, 0.1); }
+
+        .feature-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 100px 40px;
+            background: var(--bg);
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .product-showcase:nth-child(even) {
+            direction: rtl;
+        }
+
+        .product-showcase:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .product-content h3 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .product-content p {
+            color: var(--text-muted);
+            font-size: 1.1em;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .product-features {
+            list-style: none;
+        }
+
+        .product-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            color: var(--text);
+        }
+
+        .product-features li svg {
+            width: 20px;
+            height: 20px;
+            color: var(--secondary);
+            flex-shrink: 0;
+        }
+
+        .product-visual {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-visual video {
+            width: 100%;
+            display: block;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, #6d28d9 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: white;
+            color: var(--primary);
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px;
+            background: white;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9em;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-title {
+                font-size: 2.5em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .product-showcase:nth-child(even) {
+                direction: ltr;
+            }
+
+            .floating-card {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">Edge AI Foundry</div>
+            <a href="mailto:figo007007@gmail.com" class="nav-cta">聯繫洽詢</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-backdrop"></div>
+        <div class="hero-badge">Edge AI 解決方案</div>
+        <h1 class="hero-title">
+            高效能 <span>AI</span>，<br>
+            零基礎設施成本
+        </h1>
+        <p class="hero-subtitle">
+            人臉辨識、文件掃描、物件偵測 — 全部在裝置上運行。
+            不需要雲端費用，沒有資料隱私風險。
+        </p>
+
+        <div class="hero-visual-wrapper">
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <img src="hero1.png" alt="Hero 1" class="hero-slide hero-slide-1">
+                    <img src="hero2.png" alt="Hero 2" class="hero-slide hero-slide-2">
+                    <img src="hero3.png" alt="Hero 3" class="hero-slide hero-slide-3">
+                </div>
+            </div>
+
+            <div class="hero-cards">
+                <div class="hero-card hero-card-1">
+                    <div class="hero-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="4" y="2" width="16" height="20" rx="2"/>
+                            <line x1="12" y1="18" x2="12" y2="18.01"/>
+                        </svg>
+                    </div>
+                    <div class="hero-card-content">
+                        <h4>單一裝置</h4>
+                        <p>只需一台平板即可安裝</p>
+                    </div>
+                </div>
+
+                <div class="hero-card hero-card-2">
+                    <div class="hero-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="1" y1="1" x2="23" y2="23"/>
+                            <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/>
+                            <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/>
+                            <path d="M10.71 5.05A16 16 0 0 1 22.58 9"/>
+                            <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/>
+                            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+                            <line x1="12" y1="20" x2="12.01" y2="20"/>
+                        </svg>
+                    </div>
+                    <div class="hero-card-content">
+                        <h4>無網可運作</h4>
+                        <p>邊緣運算資料不上雲端</p>
+                    </div>
+                </div>
+
+                <div class="hero-card hero-card-3">
+                    <div class="hero-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                            <circle cx="12" cy="13" r="4"/>
+                        </svg>
+                    </div>
+                    <div class="hero-card-content">
+                        <h4>搭配任意 IP Cam</h4>
+                        <p>可搭配任意 IP cam</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">為什麼選擇 Edge AI</div>
+                <h2 class="section-title">更好的方案</h2>
+                <p class="section-subtitle">所有運算都在裝置上完成，帶來更多優勢</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon purple">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/>
+                            <line x1="4" y1="4" x2="20" y2="20" stroke-width="2.5"/>
+                        </svg>
+                    </div>
+                    <h3>零雲端費用</h3>
+                    <p>一次整合，無限使用。不需要支付 API 費用，成本固定可預測。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon teal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                            <line x1="4" y1="3" x2="20" y2="17" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>離線運作</h3>
+                    <p>不需要網路連線。適合網路不穩定或高安全性環境。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon pink">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3>資料不外傳</h3>
+                    <p>隱私優先設計。敏感資料永遠不會離開裝置，符合各種合規要求。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">產品線</div>
+                <h2 class="section-title">四大解決方案</h2>
+                <p class="section-subtitle">針對不同應用場景的成熟 SDK</p>
+            </div>
+
+            <div class="product-showcase">
+                <div class="product-content">
+                    <h3>人臉辨識</h3>
+                    <p>
+                        註冊一次，即時辨識。所有運算都在手機上完成，
+                        不需要伺服器，沒有雲端費用。
+                    </p>
+                    <ul class="product-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            單一裝置完成註冊與辨識
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            1000 張臉搜尋不到 1 秒
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            支援 iOS 和 Android
+                        </li>
+                    </ul>
+                </div>
+                <div class="product-visual">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/face-kit-demo/demo.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div class="product-showcase">
+                <div class="product-content">
+                    <h3>文件掃描</h3>
+                    <p>
+                        將相機對準任何文件。應用程式會在品質良好時自動拍攝，
+                        擷取所有文字並整理成結構化資料。
+                    </p>
+                    <ul class="product-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            文件入框自動拍攝
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            辨識表格和表單欄位
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            離線運作，不需雲端
+                        </li>
+                    </ul>
+                </div>
+                <div class="product-visual">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/document-demo/demo.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div class="product-showcase">
+                <div class="product-content">
+                    <h3>物件偵測</h3>
+                    <p>
+                        將相機對準物件，應用程式即時偵測並計數。
+                        無授權費用，商業使用完全免費。
+                    </p>
+                    <ul class="product-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            即時相機偵測
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            裝置離線運作
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            商業使用免費
+                        </li>
+                    </ul>
+                </div>
+                <div class="product-visual">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/yolo-demo/demo.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div class="product-showcase">
+                <div class="product-content">
+                    <h3>AIoT / Linux</h3>
+                    <p>
+                        同樣的 AI 引擎現在可以在 Linux 上運行。
+                        部署到工業設備、自助服務機、邊緣伺服器或任何嵌入式系統。
+                    </p>
+                    <ul class="product-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            支援 x86 和 ARM Linux
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            與手機版相同準確度
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            不需要網路連線
+                        </li>
+                    </ul>
+                </div>
+                <div class="product-visual">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/linux-demo/demo.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>開始導入 Edge AI</h2>
+        <p>想了解如何將 Edge AI 整合到您的產品或服務？<br>提供客製化整合、技術諮詢與授權方案。</p>
+        <a href="mailto:figo007007@gmail.com" class="cta-button">
+            聯繫洽詢
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            Edge AI Foundry |
+            <a href="mailto:figo007007@gmail.com">figo007007@gmail.com</a>
+        </p>
+    </footer>
+
+    <script>
+        // Register ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Pin hero section and expand circle
+        let heroTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".hero",
+                start: "top top",
+                end: "+=250%", // scroll distance for the pin effect
+                pin: true,
+                scrub: 0.5
+            }
+        });
+
+        // Phase 1: Expanding circle (0 to 0.2)
+        heroTl.to(".hero-backdrop", {
+            scale: 1,
+            ease: "none",
+            duration: 0.2
+        }, 0);
+
+        // Change text color as circle expands
+        heroTl.to(".hero-title", {
+            color: "white",
+            ease: "none",
+            duration: 0.2
+        }, 0);
+
+        heroTl.to(".hero-title span", {
+            color: "#a78bfa",
+            ease: "none",
+            duration: 0.2
+        }, 0);
+
+        heroTl.to(".hero-subtitle", {
+            color: "rgba(255,255,255,0.8)",
+            ease: "none",
+            duration: 0.2
+        }, 0);
+
+        heroTl.to(".hero-badge", {
+            background: "rgba(255,255,255,0.15)",
+            color: "white",
+            ease: "none",
+            duration: 0.2
+        }, 0);
+
+        // Phase 2: Image slides in from left + Card 1 slides in (0.2 to 0.4)
+        heroTl.to(".hero-visual", {
+            opacity: 1,
+            x: 0,
+            ease: "power2.out",
+            duration: 0.2
+        }, 0.2);
+
+        heroTl.to(".hero-card-1", {
+            opacity: 1,
+            x: 0,
+            ease: "power2.out",
+            duration: 0.2
+        }, 0.2);
+
+        // Phase 3: hero1 -> hero2 + Card 2 (0.4 to 0.6)
+        heroTl.to(".hero-slide-1", {
+            opacity: 0,
+            ease: "none",
+            duration: 0.2
+        }, 0.4);
+
+        heroTl.to(".hero-slide-2", {
+            opacity: 1,
+            ease: "none",
+            duration: 0.2
+        }, 0.4);
+
+        heroTl.to(".hero-card-2", {
+            opacity: 1,
+            x: 0,
+            ease: "power2.out",
+            duration: 0.2
+        }, 0.4);
+
+        // Phase 4: hero2 -> hero3 + Card 3 (0.6 to 0.8)
+        heroTl.to(".hero-slide-2", {
+            opacity: 0,
+            ease: "none",
+            duration: 0.2
+        }, 0.6);
+
+        heroTl.to(".hero-slide-3", {
+            opacity: 1,
+            ease: "none",
+            duration: 0.2
+        }, 0.6);
+
+        heroTl.to(".hero-card-3", {
+            opacity: 1,
+            x: 0,
+            ease: "power2.out",
+            duration: 0.2
+        }, 0.6);
+
+        // Feature cards animation
+        gsap.utils.toArray(".feature-card").forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 60,
+                opacity: 0,
+                duration: 0.8,
+                delay: i * 0.1,
+                ease: "power3.out"
+            });
+        });
+
+        // Product showcase animation
+        gsap.utils.toArray(".product-showcase").forEach((showcase) => {
+            const content = showcase.querySelector(".product-content");
+            const visual = showcase.querySelector(".product-visual");
+
+            gsap.from(content, {
+                scrollTrigger: {
+                    trigger: showcase,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                },
+                x: -50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+
+            gsap.from(visual, {
+                scrollTrigger: {
+                    trigger: showcase,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                },
+                x: 50,
+                opacity: 0,
+                duration: 0.8,
+                delay: 0.2,
+                ease: "power3.out"
+            });
+        });
+    </script>
+</body>
+</html>
