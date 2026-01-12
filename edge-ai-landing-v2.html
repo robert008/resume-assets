@@ -417,10 +417,20 @@
             line-height: 1.6;
         }
 
-        /* Products Section */
-        .products-section {
-            padding: 100px 40px;
+        /* Products Header */
+        .products-header {
+            padding: 80px 40px 40px;
             background: var(--bg);
+        }
+
+        /* Product Section */
+        .product-section {
+            padding: 80px 40px;
+            background: var(--bg);
+        }
+
+        .product-section.alt {
+            background: white;
         }
 
         .product-showcase {
@@ -428,14 +438,13 @@
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
-            margin-bottom: 80px;
         }
 
-        .product-showcase:nth-child(even) {
+        .product-showcase.reverse {
             direction: rtl;
         }
 
-        .product-showcase:nth-child(even) > * {
+        .product-showcase.reverse > * {
             direction: ltr;
         }
 
@@ -471,6 +480,31 @@
             flex-shrink: 0;
         }
 
+        .product-detail-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 24px;
+            padding: 8px 20px;
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .product-detail-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .product-detail-btn::after {
+            content: '→';
+        }
+
         .product-visual {
             border-radius: 20px;
             overflow: hidden;
@@ -480,6 +514,36 @@
         .product-visual video {
             width: 100%;
             display: block;
+        }
+
+        /* Landscape video layout */
+        .product-showcase.landscape {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .product-showcase.landscape .product-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .product-showcase.landscape .product-features {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 12px 24px;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+
+        .product-showcase.landscape .product-detail-btn {
+            display: block;
+            width: fit-content;
+            margin: 24px auto 0;
+        }
+
+        .product-showcase.landscape .product-visual {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         /* CTA Section */
@@ -692,151 +756,155 @@
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products-section">
+    <!-- Products Header -->
+    <section class="products-header">
         <div class="section-container">
             <div class="section-header">
                 <div class="section-badge">產品線</div>
-                <h2 class="section-title">四大解決方案</h2>
+                <h2 class="section-title">解決方案</h2>
                 <p class="section-subtitle">針對不同應用場景的成熟 SDK</p>
             </div>
+        </div>
+    </section>
 
-            <div class="product-showcase">
+    <!-- Product 1: 車輛追蹤 -->
+    <section class="product-section">
+        <div class="section-container">
+            <div class="product-showcase landscape">
                 <div class="product-content">
-                    <h3>人臉辨識</h3>
-                    <p>
-                        註冊一次，即時辨識。所有運算都在手機上完成，
-                        不需要伺服器，沒有雲端費用。
-                    </p>
+                    <h3>車輛追蹤</h3>
+                    <p>可追蹤車輛，即時偵測與分析車輛動態。</p>
                     <ul class="product-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            單一裝置完成註冊與辨識
+                            停車場車位判斷
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            1000 張臉搜尋不到 1 秒
+                            車流量判斷
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            支援 iOS 和 Android
+                            車輛出入控制
                         </li>
                     </ul>
                 </div>
                 <div class="product-visual">
                     <video autoplay muted loop playsinline>
-                        <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/face-kit-demo/demo.mp4" type="video/mp4">
+                        <source src="video/hero-homepage-traffic.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="product-showcase">
+    <!-- Product 2: 車載辨識 -->
+    <section class="product-section alt">
+        <div class="section-container">
+            <div class="product-showcase landscape">
                 <div class="product-content">
-                    <h3>文件掃描</h3>
-                    <p>
-                        將相機對準任何文件。應用程式會在品質良好時自動拍攝，
-                        擷取所有文字並整理成結構化資料。
-                    </p>
+                    <h3>車載辨識</h3>
+                    <p>車輛行駛中即時辨識周遭環境與道路資訊。</p>
                     <ul class="product-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            文件入框自動拍攝
+                            辨識公路指標
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            辨識表格和表單欄位
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            離線運作，不需雲端
+                            偵測四方來車
                         </li>
                     </ul>
                 </div>
                 <div class="product-visual">
                     <video autoplay muted loop playsinline>
-                        <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/document-demo/demo.mp4" type="video/mp4">
+                        <source src="video/hero-homepage-bike.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="product-showcase">
+    <!-- Product 3: 人體追蹤 -->
+    <section class="product-section">
+        <div class="section-container">
+            <div class="product-showcase landscape">
                 <div class="product-content">
-                    <h3>物件偵測</h3>
-                    <p>
-                        將相機對準物件，應用程式即時偵測並計數。
-                        無授權費用，商業使用完全免費。
-                    </p>
+                    <h3>人體追蹤</h3>
+                    <p>即時追蹤人員移動軌跡與行為分析。</p>
                     <ul class="product-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            即時相機偵測
+                            人流計數
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            裝置離線運作
+                            區域滯留偵測
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            商業使用免費
+                            人臉分析
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            動作分析
                         </li>
                     </ul>
+                    <a href="people-tracking-detail.html" class="product-detail-btn">詳細</a>
                 </div>
                 <div class="product-visual">
                     <video autoplay muted loop playsinline>
-                        <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/yolo-demo/demo.mp4" type="video/mp4">
+                        <source src="video/hero-homepage-people-walking.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="product-showcase">
+
+    <!-- Product 4: 產品偵測 -->
+    <section class="product-section alt">
+        <div class="section-container">
+            <div class="product-showcase landscape">
                 <div class="product-content">
-                    <h3>AIoT / Linux</h3>
-                    <p>
-                        同樣的 AI 引擎現在可以在 Linux 上運行。
-                        部署到工業設備、自助服務機、邊緣伺服器或任何嵌入式系統。
-                    </p>
+                    <h3>產品偵測</h3>
+                    <p>生產線上即時偵測產品狀態與數量。</p>
                     <ul class="product-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            支援 x86 和 ARM Linux
+                            產品 QA
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            與手機版相同準確度
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            不需要網路連線
+                            計算產品數量
                         </li>
                     </ul>
                 </div>
                 <div class="product-visual">
                     <video autoplay muted loop playsinline>
-                        <source src="https://raw.githubusercontent.com/robert008/resume-assets/main/linux-demo/demo.mp4" type="video/mp4">
+                        <source src="video/hero-homepage-candy.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
