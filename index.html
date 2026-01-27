@@ -3628,6 +3628,16 @@
                 });
             }
         });
+
+        // URL 參數支援：允許直接連結到特定專案
+        // 例如：index.html?project=attendance
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const project = params.get('project');
+            if (project) {
+                showProject(project);
+            }
+        })();
     </script>
 </body>
 </html>
